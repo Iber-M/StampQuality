@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Identidad | Stamp Quality</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon-og.png">
+    <style>
+        .brand-section {
+            padding: 80px 5%;
+            border-bottom: 1px solid #1A1C21;
+        }
+
+        .brand-header {
+            padding: 100px 5% 60px;
+            text-align: center;
+            background: radial-gradient(circle at 50% 0%, rgba(114, 47, 55, 0.2) 0%, transparent 60%);
+        }
+
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+            max-width: var(--container);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Color Swatches */
+        .swatch {
+            background: #141619;
+            padding: 20px;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .color-preview {
+            height: 120px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hex-code {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            color: white;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .color-name {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Typography */
+        .type-sample {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        .type-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 20px;
+            color: var(--accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .alphabet {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            word-break: break-all;
+            line-height: 1.6;
+        }
+
+        /* Logo Construction */
+        .logo-construction {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 60px;
+            border-radius: var(--radius-lg);
+        }
+
+        .logo-display {
+            transform: scale(3);
+        }
+
+        .grid-overlay {
+            display: grid;
+            grid-template-columns: repeat(3, 40px);
+            gap: 4px;
+            position: relative;
+        }
+
+        .grid-cell {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #333;
+        }
+
+        .grid-cell.fill {
+            background: var(--accent);
+            border-color: var(--accent-secondary);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <nav>
+        <div class="logo">
+            <div class="logo-matrix">
+                <div class="cell active"></div>
+                <div class="cell"></div>
+                <div class="cell active"></div>
+                <div class="cell"></div>
+                <div class="cell active"></div>
+                <div class="cell"></div>
+                <div class="cell active"></div>
+                <div class="cell"></div>
+                <div class="cell active"></div>
+            </div>
+            <span>STAMP QUALITY</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Volver al Sitio</a></li>
+        </ul>
+    </nav>
+
+    <header class="brand-header">
+        <span class="sec-tag">Corporate Identity</span>
+        <h1 style="font-size: 3.5rem; margin-top: 10px;">Sistema de Marca</h1>
+        <p class="sec-subtitle">Guía oficial de estilos, construcción gráfica y uso de la identidad visual de Stamp
+            Quality.</p>
+    </header>
+
+    <!-- 1. Logotipo -->
+    <section class="brand-section">
+        <div class="sec-header" style="text-align: center;">
+            <span class="sec-tag">El Sello</span>
+            <h2 class="sec-title">Construcción del Logotipo</h2>
+        </div>
+        <div class="logo-construction">
+            <div class="logo-display">
+                <div class="logo-matrix">
+                    <div class="cell active"></div>
+                    <div class="cell"></div>
+                    <div class="cell active"></div>
+                    <div class="cell"></div>
+                    <div class="cell active"></div>
+                    <div class="cell"></div>
+                    <div class="cell active"></div>
+                    <div class="cell"></div>
+                    <div class="cell active"></div>
+                </div>
+            </div>
+            <div style="max-width: 400px;">
+                <h3 style="color: white; margin-bottom: 15px;">Grid de Precisión 3x3</h3>
+                <p style="color: var(--text-muted);">El isotipo representa la estructura y el orden. Formado por un grid
+                    de 3x3 módulos donde las esquinas y el centro ("El Núcleo") están activos, simbolizando la cobertura
+                    total y el control centralizado de la calidad.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Colores -->
+    <section class="brand-section">
+        <div class="sec-header" style="text-align: center;">
+            <span class="sec-tag">Atmósfera</span>
+            <h2 class="sec-title">Paleta Industrial</h2>
+        </div>
+        <div class="brand-grid">
+            <!-- Accent -->
+            <div class="swatch">
+                <div class="color-preview" style="background: var(--accent);"></div>
+                <span class="hex-code">#722F37</span>
+                <span class="color-name">Executive Crimson / Vino Quemado</span>
+            </div>
+            <!-- Secondary -->
+            <div class="swatch">
+                <div class="color-preview" style="background: var(--accent-secondary);"></div>
+                <span class="hex-code">#9E4244</span>
+                <span class="color-name">Industrial Oxide</span>
+            </div>
+            <!-- Dark -->
+            <div class="swatch">
+                <div class="color-preview" style="background: #0B0C10;"></div>
+                <span class="hex-code">#0B0C10</span>
+                <span class="color-name">Obsidian Black (Fondo)</span>
+            </div>
+            <!-- Surface -->
+            <div class="swatch">
+                <div class="color-preview" style="background: #1F2833;"></div>
+                <span class="hex-code">#1F2833</span>
+                <span class="color-name">Gunmetal (Superficies)</span>
+            </div>
+            <!-- Text -->
+            <div class="swatch">
+                <div class="color-preview" style="background: #C5C6C7;"></div>
+                <span class="hex-code">#C5C6C7</span>
+                <span class="color-name">Platinum (Texto Principal)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Tipografía -->
+    <section class="brand-section">
+        <div class="sec-header" style="text-align: center;">
+            <span class="sec-tag">Voz</span>
+            <h2 class="sec-title">Sistema Tipográfico</h2>
+        </div>
+        <div
+            style="max-width: var(--container); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px;">
+
+            <!-- Outfit -->
+            <div>
+                <div class="type-sample">
+                    <div class="type-header">
+                        <span>OUTFIT</span>
+                        <span>Titulares & Data</span>
+                    </div>
+                    <h1 style="line-height: 1; margin-bottom: 20px;">Aa Bb Cc 123</h1>
+                    <p class="alphabet" style="font-family: 'Outfit', sans-serif;">
+                        <strong>Bold (700)</strong><br>
+                        ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                        abcdefghijklmnopqrstuvwxyz<br>
+                        1234567890 !@#$%^&*()
+                    </p>
+                </div>
+            </div>
+
+            <!-- Inter -->
+            <div>
+                <div class="type-sample">
+                    <div class="type-header">
+                        <span>INTER</span>
+                        <span>Cuerpo & Lectura</span>
+                    </div>
+                    <h1 style="font-family: 'Inter', sans-serif; line-height: 1; margin-bottom: 20px;">Aa Bb Cc 123</h1>
+                    <p class="alphabet" style="font-family: 'Inter', sans-serif;">
+                        Regular (400)<br>
+                        ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                        abcdefghijklmnopqrstuvwxyz<br>
+                        1234567890 !@#$%^&*()
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer
+        style="text-align: center; padding: 40px; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid #1A1C21;">
+        DOCUMENTO CONFIDENCIAL DE USO INTERNO - STAMP QUALITY 2026
+    </footer>
+
+    <script>
+        // Cursor Logic duplication for standalone page
+        const cursor = document.querySelector('.cursor');
+        const follower = document.querySelector('.cursor-follower');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            setTimeout(() => {
+                follower.style.left = e.clientX + 'px';
+                follower.style.top = e.clientY + 'px';
+            }, 50);
+        });
+    </script>
+</body>
+
+</html>
