@@ -993,6 +993,42 @@ footer {
     font-weight: 500;
 }
 
+/* Menu Toggle Button Styles */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
 @media (max-width: 900px) {
     .menu-toggle {
         display: flex;
@@ -1043,20 +1079,26 @@ footer {
     }
 
     /* Move Lang Selector into menu logic visualization */
+    /* Move Lang Selector into menu logic visualization */
     .lang-selector {
-        position: fixed;
-        bottom: 50px;
-        left: 50%;
-        transform: translateX(-50%) translateY(20px);
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: translateY(20px);
         opacity: 0;
         transition: 0.3s;
         z-index: 1002;
         pointer-events: none;
+        margin-top: 30px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .lang-selector.active {
         opacity: 1;
-        transform: translateX(-50%) translateY(0);
+        transform: translateY(0);
         pointer-events: all;
         transition-delay: 0.4s;
     }
@@ -1065,42 +1107,6 @@ footer {
     .std-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-}
-
-/* Menu Toggle Button Styles */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.menu-toggle span {
-    display: block;
-    height: 2px;
-    width: 100%;
-    background: white;
-    border-radius: 2px;
-    transition: 0.3s;
-}
-
-.menu-toggle.active span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-}
-
-.menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle.active span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-}
-
-.no-scroll {
-    overflow: hidden;
 }
 
 @media (max-width: 600px) {
