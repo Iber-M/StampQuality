@@ -214,8 +214,10 @@ nav {
 .hero {
     height: 100vh;
     min-height: 800px;
-    background: radial-gradient(circle at 70% 30%, rgba(114, 47, 55, 0.2) 0%, transparent 60%),
-        linear-gradient(135deg, #0B0C10 0%, #1F2833 100%);
+    background: linear-gradient(to right, rgba(11, 12, 16, 0.95) 0%, rgba(11, 12, 16, 0.6) 100%),
+        url('inspector-hero.png');
+    background-size: cover;
+    background-position: center;
     color: white;
     display: grid;
     place-items: center;
