@@ -1,0 +1,539 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;700&display=swap');
+
+:root {
+    /* Amber Precision Color Palette */
+    
+    /* Primary: Deep Gunmetal / Industrial Black */
+    --primary: #121212;
+    --primary-light: #1E2329;
+    --primary-dark: #050505;
+
+    /* Accent: Safety Amber & Industrial Gold */
+    --accent: #FFC000;
+    --accent-secondary: #FF9500;
+    --accent-glow: rgba(255, 192, 0, 0.25);
+
+    /* Backgrounds: Matte Dark */
+    --bg: #121212;
+    --surface: #1C1C1C;
+    --surface-glass: rgba(28, 28, 28, 0.85);
+
+    /* Text: High Contrast */
+    --text-main: #FFFFFF;
+    --text-muted: #A0A0A0;
+    --text-inv: #000000;
+
+    /* Gradients */
+    --grad-industrial: linear-gradient(135deg, #1A1A1A 0%, #000000 100%);
+    --grad-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+
+    /* Shapes & Spacing */
+    --radius-sm: 2px; /* Sharper corners for industrial feel */
+    --radius-md: 4px;
+    --radius-lg: 8px;
+    --container: 1300px;
+    --section-pad: 120px;
+
+    /* Animation Tokens */
+    --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+    --transition: 0.4s var(--ease-out-expo); /* Slightly faster, snappier */
+}
+
+/* Base Reset & Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text-main);
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--text-main);
+    text-transform: uppercase; /* More industrial authority */
+}
+
+/* Custom Elite Cursor - Amber Edition */
+.cursor {
+    width: 12px;
+    height: 12px;
+    background: var(--accent);
+    border-radius: 0; /* Square cursor for precision */
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: normal;
+    transition: transform 0.1s ease;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px var(--accent);
+}
+
+.cursor-follower {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--accent);
+    border-radius: 4px; /* Slight rounded square */
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.2s ease, width 0.3s, height 0.3s;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+}
+
+/* Navigation - Industrial HUD Style */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--accent);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+}
+
+.logo-matrix {
+    display: grid;
+    grid-template-columns: repeat(3, 8px);
+    gap: 4px;
+    padding: 0;
+}
+
+.logo-matrix .cell {
+    width: 8px;
+    height: 8px;
+    background: #333;
+    border-radius: 0;
+}
+
+.logo-matrix .cell.active {
+    background: var(--accent);
+    box-shadow: 0 0 5px var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    min-height: 800px;
+    background: 
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        url('https://images.unsplash.com/photo-1590642916589-59234af99d9d?q=80&w=2070&auto=format&fit=crop'); /* Warehouse/Industrial BG */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    display: grid;
+    place-items: center;
+    position: relative;
+    border-bottom: 1px solid #333;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    width: 90%;
+    max-width: var(--container);
+    z-index: 2;
+}
+
+.tagline {
+    color: var(--accent);
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    background: rgba(255, 192, 0, 0.1);
+    padding: 5px 10px;
+    border-left: 3px solid var(--accent);
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    color: white;
+    line-height: 0.95;
+    margin-bottom: 30px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: #CCC;
+    margin-bottom: 50px;
+    max-width: 600px;
+    font-weight: 400;
+}
+
+.cta-group {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 18px 40px;
+    border-radius: 0; /* Square buttons */
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: var(--transition);
+    border: none;
+    text-decoration: none;
+    position: relative;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: black;
+}
+
+.btn-primary:hover {
+    background: #FFD040;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 192, 0, 0.2);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: black;
+}
+
+/* Visualization - Industrial Shield */
+.hero-visual {
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.shield-container {
+    width: 400px;
+    height: 400px;
+    border: 2px dashed rgba(255, 192, 0, 0.3);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    animation: rotate 60s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.shield-main {
+    width: 280px;
+    height: 280px;
+    background: #000;
+    border: 2px solid var(--accent);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute; /* Stop rotation for text */
+}
+
+.percentage {
+    font-size: 5rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    color: var(--accent);
+}
+
+.pct-label {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    color: white;
+}
+
+/* Services */
+.section {
+    padding: var(--section-pad) 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #222;
+}
+
+.sec-tag {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 800;
+    font-size: 0.9rem;
+}
+
+.sec-title {
+    font-size: 3rem;
+    margin-top: 15px;
+    margin-bottom: 60px;
+}
+
+.grid-services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px; /* Minimal gap for grid lines */
+    background: #333; /* Grid line color */
+    border: 1px solid #333;
+    width: 100%;
+    max-width: var(--container);
+}
+
+.card {
+    background: var(--surface);
+    padding: 50px 40px;
+    border-radius: 0;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.card:hover {
+    background: #252525;
+}
+
+.card:hover .card-icon {
+    color: var(--accent);
+    transform: scale(1.1);
+}
+
+.card-num {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #333;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.card-icon {
+    margin-bottom: 25px;
+    color: #666; /* Muted normally */
+    transition: 0.3s;
+}
+
+.card-icon svg {
+    stroke-width: 1.5;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.card ul {
+    margin-top: 30px;
+    list-style: none;
+}
+
+.card li {
+    padding: 12px 0;
+    border-bottom: 1px solid #333;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #AAA;
+}
+
+.card li::before {
+    content: '■'; /* Square bullet */
+    font-size: 0.8rem;
+    color: var(--accent);
+}
+
+/* Authority Section */
+.split-section {
+    background: #000;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid #222;
+}
+
+.split-bg {
+    background: url('https://images.unsplash.com/photo-1565515220711-b0e7978f18cb?auto=format&fit=crop&q=80') center/cover;
+    filter: grayscale(100%);
+}
+
+.split-content {
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pillar {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 40px;
+    border-left: 3px solid #333;
+    padding-left: 25px;
+    transition: 0.3s;
+}
+
+.pillar:hover {
+    border-left-color: var(--accent);
+}
+
+.pillar-icon {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--accent);
+}
+
+.pillar h4 {
+    color: white;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.pillar p {
+    opacity: 0.6;
+    font-size: 0.95rem;
+}
+
+/* Contact Elite */
+.contact-elite {
+    padding: 100px 5%;
+    text-align: center;
+    background: var(--accent);
+    color: black;
+}
+
+.contact-card {
+    max-width: var(--container);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.contact-card h2 {
+    color: black;
+    font-size: 3.5rem;
+    max-width: 900px;
+    line-height: 1;
+}
+
+.btn-black {
+    background: black;
+    color: var(--accent);
+    padding: 20px 50px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-black:hover {
+    background: #222;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: #080808;
+    padding: 80px 5%;
+    text-align: center;
+    border-top: 5px solid black;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1100px) {
+    .grid-services {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-visual {
+        display: none;
+    }
+
+    .cta-group {
+        justify-content: center;
+    }
+
+    .split-section {
+        grid-template-columns: 1fr;
+    }
+
+    .split-bg {
+        height: 300px;
+    }
+
+    .split-content {
+        padding: 40px;
+    }
+}

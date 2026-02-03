@@ -1,0 +1,501 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+    /* Elite-Tech Fusion Palette */
+    --tech-dark: #0F1419;
+    --tech-surface: #1A1F2E;
+    --tech-card: #242B3D;
+    --accent-cyan: #00D9FF;
+    --accent-orange: #FF6B35;
+    --text-primary: #E2E8F0;
+    --text-secondary: #94A3B8;
+    --glass-border: rgba(0, 217, 255, 0.2);
+
+    --font-display: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-accent: 'Space Grotesk', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--tech-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Navigation - Glassmorphism Dark */
+.nav-fusion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(26, 31, 46, 0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 1000;
+    padding: 20px 5%;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-fusion {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-matrix-nav {
+    display: grid;
+    grid-template-columns: repeat(3, 12px);
+    gap: 4px;
+    padding: 10px;
+    background: rgba(0, 217, 255, 0.05);
+    border: 2px solid var(--accent-cyan);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.logo-matrix-nav .cell {
+    width: 12px;
+    height: 12px;
+    background: rgba(148, 163, 184, 0.3);
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.logo-matrix-nav .cell.active {
+    background: var(--accent-cyan);
+    box-shadow: 0 0 10px var(--accent-cyan);
+}
+
+.logo-text-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.logo-text-nav .main {
+    font-family: var(--font-accent);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+.logo-text-nav .sub {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    color: var(--accent-cyan);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-cyan);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-cyan);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Hero - Elite Glassmorphism with Tech Colors */
+.hero-fusion {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 5% 80px;
+    background: linear-gradient(135deg, var(--tech-dark) 0%, var(--tech-surface) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-fusion::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 217, 255, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 20s infinite ease-in-out;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-50px, 50px);
+    }
+}
+
+.hero-fusion::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 15s infinite ease-in-out reverse;
+}
+
+.hero-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 80px;
+    align-items: center;
+    z-index: 1;
+}
+
+.hero-text h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 30px;
+}
+
+.hero-text h1 .gradient {
+    background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-orange) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-text p {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    max-width: 650px;
+    line-height: 1.8;
+}
+
+.cta-fusion {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 45px;
+    background: rgba(0, 217, 255, 0.1);
+    border: 2px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta-fusion:hover {
+    background: var(--accent-cyan);
+    color: var(--tech-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 217, 255, 0.4);
+}
+
+/* Logo Showcase - Glass Card */
+.logo-showcase {
+    background: rgba(36, 43, 61, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.logo-matrix-large {
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    gap: 15px;
+}
+
+.logo-matrix-large .cell {
+    width: 50px;
+    height: 50px;
+    background: rgba(148, 163, 184, 0.2);
+    border-radius: 8px;
+    transition: all 0.4s;
+}
+
+.logo-matrix-large .cell.active {
+    background: var(--accent-cyan);
+    box-shadow: 0 0 20px var(--accent-cyan), inset 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.logo-matrix-large:hover .cell {
+    transform: scale(0.9);
+}
+
+.logo-matrix-large:hover .cell.active {
+    transform: scale(1.05);
+}
+
+.logo-text-large {
+    text-align: center;
+}
+
+.logo-text-large .main {
+    font-family: var(--font-accent);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.logo-text-large .sub {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--accent-cyan);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+/* Services - Glass Cards */
+.services-fusion {
+    padding: 120px 5%;
+    background: var(--tech-surface);
+    position: relative;
+}
+
+.section-header {
+    max-width: 1400px;
+    margin: 0 auto 70px;
+    text-align: center;
+}
+
+.section-tag {
+    font-size: 0.85rem;
+    color: var(--accent-cyan);
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.services-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+.service-card {
+    background: rgba(36, 43, 61, 0.5);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 50px 40px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover {
+    background: rgba(36, 43, 61, 0.8);
+    border-color: var(--accent-cyan);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 217, 255, 0.2);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(0, 217, 255, 0.1);
+    border: 2px solid var(--accent-cyan);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    transition: all 0.3s;
+}
+
+.service-card:hover .service-icon {
+    background: var(--accent-cyan);
+    transform: scale(1.1) rotate(5deg);
+}
+
+.service-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 18px;
+}
+
+.service-card p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* Stats - Glassmorphism */
+.stats-fusion {
+    padding: 100px 5%;
+    background: var(--tech-dark);
+}
+
+.stats-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: rgba(36, 43, 61, 0.4);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 60px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-orange) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 15px;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 120px 5%;
+    background: var(--tech-surface);
+}
+
+.cta-box {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    background: rgba(36, 43, 61, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 80px 60px;
+}
+
+.cta-box h2 {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 25px;
+}
+
+.cta-box p {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+}
+
+/* Footer */
+.footer-fusion {
+    padding: 60px 5%;
+    background: var(--tech-dark);
+    border-top: 1px solid var(--glass-border);
+    text-align: center;
+}
+
+.footer-fusion p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+
+    .hero-content,
+    .services-grid,
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .logo-showcase {
+        padding: 40px;
+    }
+}

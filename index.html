@@ -12,6 +12,26 @@
         content="calidad industrial, sorting mexico, sorteo de material, inspección de calidad, retrabajo industrial, SLP, bajio, tercería técnica">
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon-og.png">
+    <link rel="apple-touch-icon" href="assets/favicon-og.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://stampquality.mx/">
+    <meta property="og:title" content="Stamp Quality | Autoridad Industrial en Calidad">
+    <meta property="og:description"
+        content="Protegemos tu operación 24/7. Especialistas en inspección técnica, sorteo y retrabajo industrial en SLP y El Bajío.">
+    <meta property="og:image" content="assets/favicon-og.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://stampquality.mx/">
+    <meta property="twitter:title" content="Stamp Quality | Autoridad Industrial en Calidad">
+    <meta property="twitter:description"
+        content="Protegemos tu operación 24/7. Especialistas en inspección técnica, sorteo y retrabajo industrial en SLP y El Bajío.">
+    <meta property="twitter:image" content="assets/favicon-og.png">
 </head>
 
 <body>
@@ -20,45 +40,72 @@
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
 
+    <!-- WhatsApp Link -->
+    <a href="https://wa.me/525590205454" class="wa-float" target="_blank">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+    </a>
+
     <!-- Navigation -->
     <nav>
         <div class="logo">
-            <div class="logo-icon">SQ</div>
+            <div class="logo-matrix">
+                <div class="cell active"></div>
+                <div class="cell"></div>
+                <div class="cell active"></div>
+                <div class="cell"></div>
+                <div class="cell active"></div>
+                <div class="cell"></div>
+                <div class="cell active"></div>
+                <div class="cell"></div>
+                <div class="cell active"></div>
+            </div>
             <span>STAMP QUALITY</span>
         </div>
         <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#metodologia">Metodología</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#inicio" data-i18n="nav_inicio">Inicio</a></li>
+            <li><a href="#servicios" data-i18n="nav_servicios">Servicios</a></li>
+            <li><a href="#metodologia" data-i18n="nav_metodologia">Metodología</a></li>
+            <li><a href="#contacto" data-i18n="nav_contacto">Contacto</a></li>
         </ul>
+        <div class="lang-selector">
+            <button class="lang-btn active" data-lang="es" title="Español">ES</button>
+            <button class="lang-btn" data-lang="en" title="English">EN</button>
+            <button class="lang-btn" data-lang="zh" title="中文">中文</button>
+            <button class="lang-btn" data-lang="ja" title="日本語">日本語</button>
+            <button class="lang-btn" data-lang="de" title="Deutsch">DE</button>
+        </div>
     </nav>
 
     <!-- Hero Section -->
     <header id="inicio" class="hero">
         <div class="hero-grid">
             <div class="hero-text">
-                <span class="tagline">Contención Inmediata In-Plant</span>
-                <h1>La fuerza que protege tu línea de producción.</h1>
-                <p>Stamp Quality entra cuando el riesgo ya existe y la operación no se puede detener. Somos la última
-                    línea de defensa en calidad industrial.</p>
+                <span class="tagline" data-i18n="hero_tagline">Precision Inspection Systems</span>
+                <h1 data-i18n="hero_title">Precisión en cada inspección.</h1>
+                <p class="hero-description" data-i18n="hero_description">Stamp Quality protege la continuidad operativa
+                    de las organizaciones industriales más exigentes de
+                    México mediante inspección técnica, sorteo y retrabajo certificado.</p>
                 <div class="cta-group">
-                    <a href="#contacto" class="btn btn-primary">
-                        Solicitar Contención
+                    <a href="#contacto" class="btn btn-primary cta-primary" data-i18n="hero_cta_primary">
+                        Contáctanos
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                     </a>
-                    <a href="#servicios" class="btn btn-outline">Servicios Core</a>
+                    <a href="#servicios" class="btn btn-outline cta-secondary" data-i18n="hero_cta_secondary">Nuestros
+                        Servicios</a>
                 </div>
             </div>
             <div class="hero-visual">
                 <div class="shield-container">
                     <div class="shield-main">
-                        <span class="pct-label">Garantía Operativa</span>
+                        <span class="pct-label" data-i18n="hero_guarantee">Garantía Operativa</span>
                         <div class="percentage">100%</div>
-                        <span class="pct-label">Inspección Ejecutada</span>
+                        <span class="pct-label" data-i18n="hero_inspection">Inspección Ejecutada</span>
                     </div>
                 </div>
             </div>
@@ -68,50 +115,162 @@
     <!-- Focus Section -->
     <section class="section" id="servicios">
         <div class="sec-header">
-            <span class="sec-tag">Impacto Operativo</span>
-            <h2 class="sec-title">Nuestra Trilogía Core</h2>
-            <p>No somos un catálogo genérico. Somos especialistas técnicos en el piso de producción.</p>
+            <span class="sec-tag" data-i18n="services_tag">Soluciones de Calidad</span>
+            <h2 class="sec-title" data-i18n="services_title">Nuestro Stack Operativo</h2>
+            <p class="sec-subtitle" data-i18n="services_subtitle">Tres pilares técnicos que blindan la continuidad de tu
+                operación</p>
         </div>
 
         <div class="grid-services">
             <!-- Sorteo -->
             <div class="card">
-                <span class="card-num">01</span>
-                <div class="card-icon">⚡</div>
-                <h3>Sorting / Contención</h3>
-                <p>Clasificación precisa y separación controlada para garantizar que solo el material conforme avance en
-                    tu cadena de flujo.</p>
+                <div class="card-number">01</div>
+                <h3 data-i18n="service1_title">Sorting / Contención</h3>
+                <p data-i18n="service1_desc">Clasificación precisa y separación controlada para garantizar que solo
+                    material conforme avance en tu
+                    proceso.</p>
                 <ul>
-                    <li>Filtros de emergencia</li>
-                    <li>Muros de calidad</li>
-                    <li>Sorteo especializado OK/NG</li>
+                    <li data-i18n="service1_item1">Filtros de emergencia</li>
+                    <li data-i18n="service1_item2">Muros de calidad</li>
+                    <li data-i18n="service1_item3">Sorteo especializado OK/NG</li>
                 </ul>
             </div>
             <!-- Inspección -->
             <div class="card">
-                <span class="card-num">02</span>
-                <div class="card-icon">🔍</div>
-                <h3>Inspección en Sitio</h3>
-                <p>Ojos técnicos en tu línea de producción. Detectamos no conformidades visuales y dimensionales antes
-                    de que escalen.</p>
+                <div class="card-number">02</div>
+                <h3 data-i18n="service2_title">Inspección en Sitio</h3>
+                <p data-i18n="service2_desc">Detección temprana de no conformidades mediante validación visual y
+                    dimensional directa en tu línea
+                    de producción.</p>
                 <ul>
-                    <li>Validación de criterios</li>
-                    <li>Control dimensional</li>
-                    <li>Inspección 100% certificada</li>
+                    <li data-i18n="service2_item1">Validación de criterios</li>
+                    <li data-i18n="service2_item2">Control dimensional</li>
+                    <li data-i18n="service2_item3">Inspección 100% certificada</li>
                 </ul>
             </div>
             <!-- Rework -->
             <div class="card">
-                <span class="card-num">03</span>
-                <div class="card-icon">🛠️</div>
-                <h3>Rework / Retrabajo</h3>
-                <p>Recuperación técnica de materiales. Salvamos tu inventario y reducimos costos de scrap sin
-                    comprometer la calidad.</p>
+                <div class="card-number">03</div>
+                <h3 data-i18n="service3_title">Rework / Retrabajo</h3>
+                <p data-i18n="service3_desc">Recuperación técnica de materiales no conformes con apego estricto a
+                    especificaciones del cliente.
+                </p>
                 <ul>
-                    <li>Corrección de defectos</li>
-                    <li>Reprocesamiento in-plant</li>
-                    <li>Apego estricto a WI</li>
+                    <li data-i18n="service3_item1">Corrección de defectos</li>
+                    <li data-i18n="service3_item2">Reprocesamiento in-plant</li>
+                    <li data-i18n="service3_item3">Apego estricto a WI</li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Methodology Section -->
+    <section class="methodology-section">
+        <div class="sec-header">
+            <span class="sec-tag" data-i18n="methodology_tag">Nuestro ADN</span>
+            <h2 class="sec-title" data-i18n="methodology_title">Metodología de Ejecución</h2>
+            <p class="sec-subtitle" data-i18n="methodology_subtitle">5 pilares que garantizan la integridad de cada
+                proyecto</p>
+        </div>
+
+        <div class="methodology-grid">
+            <!-- 1. Close Communication -->
+            <div class="method-item">
+                <div class="method-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path
+                            d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                    </svg>
+                </div>
+                <h4 data-i18n="method1_title">Comunicación Cercana</h4>
+                <p data-i18n="method1_desc">Feedback continuo y canal directo para sugerencias de mejora.</p>
+            </div>
+
+            <!-- 2. Continuous Evaluation -->
+            <div class="method-item">
+                <div class="method-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h4 data-i18n="method2_title">Evaluación Continua</h4>
+                <p data-i18n="method2_desc">Training matrix y validación constante de habilidades del staff.</p>
+            </div>
+
+            <!-- 3. Supervision -->
+            <div class="method-item">
+                <div class="method-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path
+                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                </div>
+                <h4 data-i18n="method3_title">Supervisión 100%</h4>
+                <p data-i18n="method3_desc">Responsable dedicado en cada turno para asegurar cumplimiento.</p>
+            </div>
+
+            <!-- 4. Risk Mitigation -->
+            <div class="method-item">
+                <div class="method-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path
+                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                </div>
+                <h4 data-i18n="method4_title">Mitigación de Riesgos</h4>
+                <p data-i18n="method4_desc">Análisis preventivo para blindar tu operación contra fugas.</p>
+            </div>
+
+            <!-- 5. Daily Tracking -->
+            <div class="method-item">
+                <div class="method-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                </div>
+                <h4 data-i18n="method5_title">Reportes Diarios</h4>
+                <p data-i18n="method5_desc">Data clara, gráficas y hallazgos entregados cada 24 horas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operational Results -->
+    <section class="section dark-alt">
+        <div class="sec-header">
+            <span class="sec-tag" data-i18n="results_tag">Resultados Comprobados</span>
+            <h2 class="sec-title" data-i18n="results_title">Impacto Operativo</h2>
+            <p class="sec-subtitle" data-i18n="results_subtitle">Métricas reales logradas mediante nuestra intervención
+                estandarizada</p>
+        </div>
+        <div class="results-grid">
+            <div class="res-card">
+                <span class="res-val" data-i18n="result1_value">+10%</span>
+                <h4 data-i18n="result1_title">Productividad</h4>
+                <p data-i18n="result1_desc">Incremento directo mediante asignación eficiente de recursos.</p>
+            </div>
+            <div class="res-card">
+                <span class="res-val" data-i18n="result2_value">Scrap</span>
+                <h4 data-i18n="result2_title">Reducción Drástica</h4>
+                <p data-i18n="result2_desc">Disminución de porcentaje de rechazo y desperdicio.</p>
+            </div>
+            <div class="res-card">
+                <span class="res-val" data-i18n="result3_value">0</span>
+                <h4 data-i18n="result3_title">Fugas al Cliente</h4>
+                <p data-i18n="result3_desc">Contención efectiva de no conformidades (Reclamos).</p>
+            </div>
+            <div class="res-card">
+                <span class="res-val" data-i18n="result4_value">Downtime</span>
+                <h4 data-i18n="result4_title">Minimizado</h4>
+                <p data-i18n="result4_desc">Mejora en flujo de producción y utilización de fuerza laboral.</p>
             </div>
         </div>
     </section>
@@ -120,14 +279,15 @@
     <section class="split-section" id="metodologia">
         <div class="split-bg"></div>
         <div class="split-content">
-            <span class="sec-tag">¿Por qué Stamp Quality?</span>
-            <h2>Disciplina Operativa de Clase Mundial</h2>
+            <span class="sec-tag" data-i18n="authority_tag">¿Por qué Stamp Quality?</span>
+            <h2 data-i18n="authority_title">Disciplina Operativa de Clase Mundial</h2>
 
             <div class="pillar">
                 <div class="pillar-icon">LPA</div>
                 <div>
-                    <h4>Layered Process Audits</h4>
-                    <p>Auditorías diarias por capas para garantizar que el criterio de calidad no se degrade turno tras
+                    <h4 data-i18n="pillar1_title">Layered Process Audits</h4>
+                    <p data-i18n="pillar1_desc">Auditorías diarias por capas para garantizar que el criterio de calidad
+                        no se degrade turno tras
                         turno.</p>
                 </div>
             </div>
@@ -135,8 +295,9 @@
             <div class="pillar">
                 <div class="pillar-icon">ILU</div>
                 <div>
-                    <h4>Matriz de Habilidades</h4>
-                    <p>Personal seleccionado y certificado. Solo operadores con el nivel técnico adecuado tocan tu
+                    <h4 data-i18n="pillar2_title">Matriz de Habilidades</h4>
+                    <p data-i18n="pillar2_desc">Personal seleccionado y certificado. Solo operadores con el nivel
+                        técnico adecuado tocan tu
                         producto.</p>
                 </div>
             </div>
@@ -144,10 +305,85 @@
             <div class="pillar">
                 <div class="pillar-icon">24/7</div>
                 <div>
-                    <h4>Supervisión 100%</h4>
-                    <p>Liderazgo directo en piso para asegurar ritmos de inspección y respuesta inmediata ante
+                    <h4 data-i18n="pillar3_title">Supervisión 100%</h4>
+                    <p data-i18n="pillar3_desc">Liderazgo directo en piso para asegurar ritmos de inspección y respuesta
+                        inmediata ante
                         hallazgos.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Standards -->
+    <section class="section">
+        <div class="sec-header">
+            <span class="sec-tag" data-i18n="standards_tag">Control Total</span>
+            <h2 class="sec-title" data-i18n="standards_title">Estándares de Calidad</h2>
+            <p class="sec-subtitle" data-i18n="standards_subtitle">Herramientas de gestión y documentación técnica</p>
+        </div>
+        <div class="std-grid">
+            <div class="std-item">
+                <div class="std-icon">ILU</div>
+                <h4 data-i18n="std1_title">Skills Matrix</h4>
+            </div>
+            <div class="std-item">
+                <div class="std-icon">LPA</div>
+                <h4 data-i18n="std2_title">LPA Check List</h4>
+            </div>
+            <div class="std-item">
+                <div class="std-icon">REC</div>
+                <h4 data-i18n="std3_title">Record of Defects</h4>
+            </div>
+            <div class="std-item">
+                <div class="std-icon">80/20</div>
+                <h4 data-i18n="std4_title">Pareto Analysis</h4>
+            </div>
+            <div class="std-item">
+                <div class="std-icon">WI</div>
+                <h4 data-i18n="std5_title">Work Instructions</h4>
+            </div>
+            <div class="std-item">
+                <div class="std-icon">PRB</div>
+                <h4 data-i18n="std6_title">Problem Analysis</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business References -->
+    <section class="section dark-alt" id="aliados">
+        <div class="sec-header">
+            <span class="sec-tag" data-i18n="partners_tag">Confianza Industrial</span>
+            <h2 class="sec-title" data-i18n="partners_title">Nuestros Aliados</h2>
+            <p class="sec-subtitle" data-i18n="partners_subtitle">Empresas de clase mundial que confían en Stamp Quality
+            </p>
+        </div>
+        <div class="clients-marquee">
+            <div class="marquee-track">
+                <div class="client-logo-box"><img src="assets/logos/nal.png" alt="North American Lighting"></div>
+                <div class="client-logo-box"><img src="assets/logos/nidec.png" alt="Nidec Corporation"></div>
+                <div class="client-logo-box"><img src="assets/logos/taxan.png" alt="TAXAN México"></div>
+                <div class="client-logo-box"><img src="assets/logos/daikin.png" alt="Daikin"></div>
+                <div class="client-logo-box"><img src="assets/logos/continental.png" alt="Continental"></div>
+                <div class="client-logo-box"><img src="assets/logos/plastics_technology.png" alt="Plastics Technology">
+                </div>
+                <div class="client-logo-box"><img src="assets/logos/plastic_omnium.png" alt="Plastic Omnium"></div>
+                <div class="client-logo-box"><img src="assets/logos/integrity_tool.png" alt="Integrity Tool & Mold">
+                </div>
+                <div class="client-logo-box"><img src="assets/logos/asiaway.png" alt="Asiaway Automotive"></div>
+                <div class="client-logo-box"><img src="assets/logos/arcosa.png" alt="Arcosa Industries"></div>
+                <!-- Duplicate for seamless loop -->
+                <div class="client-logo-box"><img src="assets/logos/nal.png" alt="North American Lighting"></div>
+                <div class="client-logo-box"><img src="assets/logos/nidec.png" alt="Nidec Corporation"></div>
+                <div class="client-logo-box"><img src="assets/logos/taxan.png" alt="TAXAN México"></div>
+                <div class="client-logo-box"><img src="assets/logos/daikin.png" alt="Daikin"></div>
+                <div class="client-logo-box"><img src="assets/logos/continental.png" alt="Continental"></div>
+                <div class="client-logo-box"><img src="assets/logos/plastics_technology.png" alt="Plastics Technology">
+                </div>
+                <div class="client-logo-box"><img src="assets/logos/plastic_omnium.png" alt="Plastic Omnium"></div>
+                <div class="client-logo-box"><img src="assets/logos/integrity_tool.png" alt="Integrity Tool & Mold">
+                </div>
+                <div class="client-logo-box"><img src="assets/logos/asiaway.png" alt="Asiaway Automotive"></div>
+                <div class="client-logo-box"><img src="assets/logos/arcosa.png" alt="Arcosa Industries"></div>
             </div>
         </div>
     </section>
@@ -155,14 +391,27 @@
     <!-- Elite Contact -->
     <section class="contact-elite" id="contacto">
         <div class="contact-card">
-            <span class="sec-tag" style="color: white">Respuesta Inmediata</span>
-            <h2>¿Tienes una crisis de calidad hoy mismo?</h2>
-            <p style="font-size: 1.2rem; opacity: 0.8; max-width: 700px">Estamos listos para desplegar fuerza técnica en
-                San Luis Potosí y toda la región Bajío. No permitas que un defecto detenga tu negocio.</p>
-            <a href="mailto:info@stampquality.com" class="btn btn-primary large"
-                style="background: white; color: var(--accent)">
-                Hablar con un Especialista
+            <span class="sec-tag" style="color: white" data-i18n="contact_tag">Respuesta Inmediata</span>
+            <h2 data-i18n="contact_title">¿Necesitas contención inmediata?</h2>
+            <p style="font-size: 1.2rem; opacity: 0.8; max-width: 700px" data-i18n="contact_desc">Estamos listos para
+                desplegar fuerza técnica en
+                San Luis Potosí y toda la región Bajío.</p>
+            <a href="mailto:iber@corecompetent.mx" class="btn-large" data-i18n="contact_cta">
+                Hablemos de tu Proyecto
             </a>
+        </div>
+    </section>
+
+    <!-- Locations Footer (Discrete) -->
+    <section class="locations-footer">
+        <div class="locations-compact">
+            <span class="loc-dot"></span><span>San Luis Potosí</span>
+            <span class="loc-dot"></span><span>Querétaro</span>
+            <span class="loc-dot"></span><span>Guanajuato</span>
+            <span class="loc-dot"></span><span>Nuevo León</span>
+            <span class="loc-dot"></span><span>Coahuila</span>
+            <span class="loc-dot"></span><span>Aguascalientes</span>
+            <span class="loc-dot"></span><span>Veracruz</span>
         </div>
     </section>
 
@@ -170,11 +419,25 @@
     <footer class="section" style="background: var(--primary-dark); color: white; padding: 80px 5%">
         <div style="display: flex; flex-direction: column; align-items: center; gap: 30px">
             <div class="logo">
-                <div class="logo-icon">SQ</div>
+                <div class="logo-matrix">
+                    <div class="cell active"></div>
+                    <div class="cell"></div>
+                    <div class="cell active"></div>
+                    <div class="cell"></div>
+                    <div class="cell active"></div>
+                    <div class="cell"></div>
+                    <div class="cell active"></div>
+                    <div class="cell"></div>
+                    <div class="cell active"></div>
+                </div>
                 <span>STAMP QUALITY</span>
             </div>
-            <p style="opacity: 0.4">© 2026 STAMP QUALITY MEXICO. LÍDERES EN TERCERÍA TÉCNICA.</p>
-            <p style="font-size: 0.8rem; letter-spacing: 2px; opacity: 0.6">SAN LUIS POTOSÍ | QUERÉTARO | GUANAJUATO</p>
+            <p style="opacity: 0.4" data-i18n="footer_copyright">© 2026 STAMP QUALITY MEXICO. LÍDERES EN TERCERÍA
+                TÉCNICA.</p>
+            <p style="font-size: 0.8rem; letter-spacing: 2px; opacity: 0.6; text-align: center; line-height: 1.8;">
+                SAN LUIS POTOSÍ | QUERÉTARO | GUANAJUATO | NUEVO LEÓN <br>
+                COAHUILA | VERACRUZ | AGUASCALIENTES
+            </p>
         </div>
     </footer>
 
@@ -200,7 +463,7 @@
             b.addEventListener('mouseenter', () => {
                 follower.style.width = '80px';
                 follower.style.height = '80px';
-                follower.style.background = 'rgba(255, 107, 53, 0.1)';
+                follower.style.background = 'rgba(0, 217, 255, 0.1)';
             });
             b.addEventListener('mouseleave', () => {
                 follower.style.width = '40px';
@@ -230,6 +493,12 @@
             observer.observe(el);
         });
     </script>
+    <script src="hero_scanner.js"></script>
+
+    <!-- i18n System -->
+    <script src="translations.js"></script>
+    <script src="apply-i18n.js"></script>
+    <script src="i18n.js"></script>
 </body>
 
 </html>

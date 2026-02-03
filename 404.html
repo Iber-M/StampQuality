@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página No Encontrada | Stamp Quality</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            background: radial-gradient(circle at 50% 50%, rgba(114, 47, 55, 0.2) 0%, transparent 80%), #0B0C10;
+        }
+
+        h1 {
+            font-size: 8rem;
+            margin: 0;
+            color: var(--accent);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        p {
+            color: var(--text-muted);
+            max-width: 500px;
+            margin-bottom: 40px;
+        }
+
+        .btn-home {
+            background: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .btn-home:hover {
+            background: #8E3A42;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <h1>404</h1>
+    <h2>Coordenadas Incorrectas</h2>
+    <p>La página que intentas inspeccionar no existe o ha sido movida. Regresa al stack operativo.</p>
+    <a href="index.html" class="btn-home">Volver al Inicio</a>
+
+    <script>
+        // Simple cursor script
+        const cursor = document.querySelector('.cursor');
+        const follower = document.querySelector('.cursor-follower');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+
+            setTimeout(() => {
+                follower.style.left = e.clientX + 'px';
+                follower.style.top = e.clientY + 'px';
+            }, 50);
+        });
+    </script>
+</body>
+
+</html>
