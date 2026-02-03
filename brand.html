@@ -355,6 +355,32 @@
             .grid-4 {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            /* Color Chips Grid on Mobile */
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* Mobile Back Button */
+            .mobile-back-btn {
+                display: block !important;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: var(--accent);
+                color: white;
+                padding: 12px 20px;
+                border-radius: 30px;
+                text-decoration: none;
+                font-weight: 700;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+                z-index: 1000;
+                font-size: 0.9rem;
+            }
+        }
+
+        .mobile-back-btn {
+            display: none;
         }
     </style>
 </head>
@@ -362,6 +388,9 @@
 <body>
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
+
+    <!-- Mobile Sticky Back Button -->
+    <a href="index.html" class="mobile-back-btn">← Volver al Sitio</a>
 
     <!-- Navigation -->
     <nav>
