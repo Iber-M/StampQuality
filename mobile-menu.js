@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
 
     // Move lang selector inside nav-links for mobile structure
-    if (window.innerWidth <= 900 && navLinks && langSelector) {
+    if (window.innerWidth <= 1200 && navLinks && langSelector) {
         navLinks.appendChild(langSelector);
     }
 
     // Handle resize to move it back/forth if needed (optional but good)
     window.addEventListener('resize', () => {
-        if (window.innerWidth <= 900) {
+        if (window.innerWidth <= 1200) {
             if (!navLinks.contains(langSelector)) navLinks.appendChild(langSelector);
         } else {
             const nav = document.querySelector('nav');

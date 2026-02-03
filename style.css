@@ -1029,7 +1029,7 @@ footer {
     overflow: hidden;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
     .menu-toggle {
         display: flex;
         z-index: 1001;
