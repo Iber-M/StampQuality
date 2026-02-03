@@ -4,118 +4,290 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual de Identidad | Stamp Quality</title>
+    <title>Manual de Identidad Corporativa | Stamp Quality</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/favicon-og.png">
     <style>
+        :root {
+            --brand-bg: #0B0C10;
+            --brand-surface: #141619;
+            /* Ligeramente más claro que bg */
+            --brand-border: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            background-color: var(--brand-bg);
+        }
+
+        /* Layout Structure */
+        .brand-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
         .brand-section {
-            padding: 80px 5%;
-            border-bottom: 1px solid #1A1C21;
+            padding: 100px 0;
+            border-bottom: 1px solid var(--brand-border);
         }
 
-        .brand-header {
-            padding: 100px 5% 60px;
-            text-align: center;
-            background: radial-gradient(circle at 50% 0%, rgba(114, 47, 55, 0.2) 0%, transparent 60%);
+        .brand-section:last-child {
+            border-bottom: none;
         }
 
-        .brand-grid {
+        /* Typography overrides for Manual */
+        .manual-title {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .manual-text {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+        }
+
+        .manual-subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            color: white;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--accent);
+            padding-left: 15px;
+        }
+
+        /* Grid Systems */
+        .grid-2 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 40px;
             margin-top: 40px;
-            max-width: var(--container);
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        /* Color Swatches */
-        .swatch {
-            background: #141619;
-            padding: 20px;
-            border-radius: var(--radius-md);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
         }
 
-        .color-preview {
-            height: 120px;
-            border-radius: var(--radius-sm);
-            margin-bottom: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
         }
 
-        .hex-code {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 700;
-            color: white;
-            display: block;
-            margin-bottom: 5px;
+        /* Cards */
+        .card {
+            background: var(--brand-surface);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid var(--brand-border);
+            transition: 0.3s;
         }
 
-        .color-name {
-            color: var(--text-muted);
-            font-size: 0.9rem;
+        .card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
-        /* Typography */
-        .type-sample {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 30px;
-            margin-bottom: 30px;
-        }
-
-        .type-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 20px;
-            color: var(--accent);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .alphabet {
-            font-size: 1.5rem;
-            color: var(--text-main);
-            word-break: break-all;
-            line-height: 1.6;
-        }
-
-        /* Logo Construction */
-        .logo-construction {
+        /* Logo Exhibits */
+        .logo-box {
+            background: black;
+            padding: 60px;
             display: flex;
             justify-content: center;
-            gap: 60px;
-            flex-wrap: wrap;
             align-items: center;
-            background: rgba(255, 255, 255, 0.02);
-            padding: 60px;
-            border-radius: var(--radius-lg);
+            border-radius: 8px;
+            border: 1px solid #333;
+            min-height: 250px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .logo-display {
-            transform: scale(3);
+        .logo-box.light {
+            background: #F0F2F5;
+            border-color: #ddd;
         }
 
-        .grid-overlay {
+        .logo-box.light .sec-title {
+            color: #0B0C10;
+        }
+
+        /* Invert title on light bg */
+
+        /* Dos and Donts */
+        .do-dont-grid {
             display: grid;
-            grid-template-columns: repeat(3, 40px);
-            gap: 4px;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .do-item,
+        .dont-item {
             position: relative;
         }
 
-        .grid-cell {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid #333;
+        .status-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            z-index: 10;
         }
 
-        .grid-cell.fill {
-            background: var(--accent);
-            border-color: var(--accent-secondary);
+        .status-badge.correct {
+            background: #1B5E20;
+            color: #E8F5E9;
+        }
+
+        .status-badge.wrong {
+            background: #B71C1C;
+            color: #FFEBEE;
+        }
+
+        /* Manipulated Logos for Don'ts */
+        .distort-stretch {
+            transform: scaleX(1.5);
+        }
+
+        .distort-rotate {
+            transform: rotate(-15deg);
+        }
+
+        .distort-color nav .logo span {
+            color: #4CAF50 !important;
+        }
+
+        /* Wrong color example */
+
+        /* Color Chips */
+        .color-chip {
+            height: 150px;
+            border-radius: 8px 8px 0 0;
+            position: relative;
+        }
+
+        .color-info {
+            padding: 20px;
+            background: #1A1C21;
+            border-radius: 0 0 8px 8px;
+            border: 1px solid var(--brand-border);
+            border-top: none;
+        }
+
+        .color-meta {
+            display: flex;
+            justify-content: space-between;
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        /* Typography Example */
+        .type-scale {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .type-row {
+            display: flex;
+            align-items: baseline;
+            border-bottom: 1px solid var(--brand-border);
+            padding-bottom: 20px;
+        }
+
+        .type-label {
+            width: 150px;
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        /* Voice & Tone */
+        .voice-scale {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .voice-scale::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #333;
+            z-index: 0;
+        }
+
+        .voice-point {
+            position: relative;
+            z-index: 1;
+            background: var(--brand-bg);
+            padding: 0 10px;
+            text-align: center;
+        }
+
+        /* Icon Grid */
+        .icon-grid-display {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100px;
+            height: 100px;
+        }
+
+        .icon-cell {
+            background: var(--brand-bg);
+        }
+
+        .toc {
+            position: fixed;
+            left: 20px;
+            top: 100px;
+            width: 200px;
+            display: none;
+        }
+
+        @media(min-width: 1400px) {
+            .toc {
+                display: block;
+            }
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc li {
+            margin-bottom: 10px;
+        }
+
+        .toc a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+
+        .toc a:hover {
+            color: var(--accent);
+            padding-left: 5px;
         }
     </style>
 </head>
@@ -124,6 +296,7 @@
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
 
+    <!-- Navigation -->
     <nav>
         <div class="logo">
             <div class="logo-matrix">
@@ -144,130 +317,438 @@
         </ul>
     </nav>
 
-    <header class="brand-header">
-        <span class="sec-tag">Corporate Identity</span>
-        <h1 style="font-size: 3.5rem; margin-top: 10px;">Sistema de Marca</h1>
-        <p class="sec-subtitle">Guía oficial de estilos, construcción gráfica y uso de la identidad visual de Stamp
-            Quality.</p>
+    <!-- TOC Sidebar -->
+    <div class="toc">
+        <span class="sec-tag">Índice</span>
+        <ul>
+            <li><a href="#intro">1. Introducción</a></li>
+            <li><a href="#brand">2. Sobre la Marca</a></li>
+            <li><a href="#logo">3. Logotipo</a></li>
+            <li><a href="#color">4. Color</a></li>
+            <li><a href="#type">5. Tipografía</a></li>
+            <li><a href="#graphics">6. Gráficos & Iconos</a></li>
+            <li><a href="#applications">7. Aplicaciones</a></li>
+        </ul>
+    </div>
+
+    <!-- 1. Intro & Purpose -->
+    <header id="intro" class="brand-section">
+        <div class="brand-container">
+            <span class="sec-tag">Manual de Identidad v1.0</span>
+            <h1 class="manual-title">El Estándar de Excelencia</h1>
+            <p class="manual-text">Este documento establece los principios rectores de la identidad visual de Stamp
+                Quality. No es solo una guía de estilo, es el código fuente de cómo nos comunicamos con el mundo
+                industrial: con precisión, autoridad y claridad absoluta.</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h3 class="manual-subtitle" style="margin-top:0;">Propósito</h3>
+                    <p style="color: #ccc;">Estandarizar la comunicación visual para generar confianza inmediata en
+                        entornos de manufactura crítica.</p>
+                </div>
+                <div class="card">
+                    <h3 class="manual-subtitle" style="margin-top:0;">Alcance</h3>
+                    <p style="color: #ccc;">Aplicable a todos los canales: Digital, Impreso, Señalética Industrial y
+                        Documentación Técnica.</p>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <!-- 1. Logotipo -->
-    <section class="brand-section">
-        <div class="sec-header" style="text-align: center;">
-            <span class="sec-tag">El Sello</span>
-            <h2 class="sec-title">Construcción del Logotipo</h2>
-        </div>
-        <div class="logo-construction">
-            <div class="logo-display">
-                <div class="logo-matrix">
-                    <div class="cell active"></div>
-                    <div class="cell"></div>
-                    <div class="cell active"></div>
-                    <div class="cell"></div>
-                    <div class="cell active"></div>
-                    <div class="cell"></div>
-                    <div class="cell active"></div>
-                    <div class="cell"></div>
-                    <div class="cell active"></div>
+    <!-- 2. Brand Core -->
+    <section id="brand" class="brand-section">
+        <div class="brand-container">
+            <span class="sec-tag">02. ADN Corporativo</span>
+            <h2 class="sec-title">Sobre la Marca</h2>
+
+            <div class="grid-3">
+                <div class="card">
+                    <h3 class="manual-subtitle" style="margin-top:0;">Misión</h3>
+                    <p class="manual-text">Blindar la cadena de suministro automotriz mediante servicios de contención
+                        de calidad que combinan velocidad de reacción humana con precisión de datos.</p>
+                </div>
+                <div class="card">
+                    <h3 class="manual-subtitle" style="margin-top:0;">Visión</h3>
+                    <p class="manual-text">Ser la autoridad técnica definitiva en El Bajío, redefiniendo el sorteo
+                        industrial como un servicio de inteligencia operativa, no solo de mano de obra.</p>
+                </div>
+                <div class="card">
+                    <h3 class="manual-subtitle" style="margin-top:0;">Valores</h3>
+                    <ul class="manual-text" style="padding-left: 20px;">
+                        <li>Precisión Absoluta</li>
+                        <li>Transparencia Radical</li>
+                        <li>Velocidad de Respuesta</li>
+                        <li>Tecnología Humana</li>
+                    </ul>
                 </div>
             </div>
-            <div style="max-width: 400px;">
-                <h3 style="color: white; margin-bottom: 15px;">Grid de Precisión 3x3</h3>
-                <p style="color: var(--text-muted);">El isotipo representa la estructura y el orden. Formado por un grid
-                    de 3x3 módulos donde las esquinas y el centro ("El Núcleo") están activos, simbolizando la cobertura
-                    total y el control centralizado de la calidad.</p>
-            </div>
         </div>
     </section>
 
-    <!-- 2. Colores -->
-    <section class="brand-section">
-        <div class="sec-header" style="text-align: center;">
-            <span class="sec-tag">Atmósfera</span>
-            <h2 class="sec-title">Paleta Industrial</h2>
-        </div>
-        <div class="brand-grid">
-            <!-- Accent -->
-            <div class="swatch">
-                <div class="color-preview" style="background: var(--accent);"></div>
-                <span class="hex-code">#722F37</span>
-                <span class="color-name">Executive Crimson / Vino Quemado</span>
-            </div>
-            <!-- Secondary -->
-            <div class="swatch">
-                <div class="color-preview" style="background: var(--accent-secondary);"></div>
-                <span class="hex-code">#9E4244</span>
-                <span class="color-name">Industrial Oxide</span>
-            </div>
-            <!-- Dark -->
-            <div class="swatch">
-                <div class="color-preview" style="background: #0B0C10;"></div>
-                <span class="hex-code">#0B0C10</span>
-                <span class="color-name">Obsidian Black (Fondo)</span>
-            </div>
-            <!-- Surface -->
-            <div class="swatch">
-                <div class="color-preview" style="background: #1F2833;"></div>
-                <span class="hex-code">#1F2833</span>
-                <span class="color-name">Gunmetal (Superficies)</span>
-            </div>
-            <!-- Text -->
-            <div class="swatch">
-                <div class="color-preview" style="background: #C5C6C7;"></div>
-                <span class="hex-code">#C5C6C7</span>
-                <span class="color-name">Platinum (Texto Principal)</span>
-            </div>
-        </div>
-    </section>
+    <!-- 3. Logo Guidelines -->
+    <section id="logo" class="brand-section">
+        <div class="brand-container">
+            <span class="sec-tag">03. Identidad Visual</span>
+            <h2 class="sec-title">Logo Principal</h2>
+            <p class="manual-text">Nuestro logotipo se compone de dos elementos indivisibles en su versión principal: El
+                Sello (Isotipo) y el Logotipo (Wordmark).</p>
 
-    <!-- 3. Tipografía -->
-    <section class="brand-section">
-        <div class="sec-header" style="text-align: center;">
-            <span class="sec-tag">Voz</span>
-            <h2 class="sec-title">Sistema Tipográfico</h2>
-        </div>
-        <div
-            style="max-width: var(--container); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px;">
-
-            <!-- Outfit -->
-            <div>
-                <div class="type-sample">
-                    <div class="type-header">
-                        <span>OUTFIT</span>
-                        <span>Titulares & Data</span>
+            <!-- Main Construction -->
+            <div class="logo-box" style="margin-top: 40px;">
+                <div class="logo" style="transform: scale(2);">
+                    <div class="logo-matrix">
+                        <div class="cell active"></div>
+                        <div class="cell"></div>
+                        <div class="cell active"></div>
+                        <div class="cell"></div>
+                        <div class="cell active"></div>
+                        <div class="cell"></div>
+                        <div class="cell active"></div>
+                        <div class="cell"></div>
+                        <div class="cell active"></div>
                     </div>
-                    <h1 style="line-height: 1; margin-bottom: 20px;">Aa Bb Cc 123</h1>
-                    <p class="alphabet" style="font-family: 'Outfit', sans-serif;">
-                        <strong>Bold (700)</strong><br>
-                        ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-                        abcdefghijklmnopqrstuvwxyz<br>
-                        1234567890 !@#$%^&*()
-                    </p>
+                    <span>STAMP QUALITY</span>
                 </div>
             </div>
 
-            <!-- Inter -->
-            <div>
-                <div class="type-sample">
-                    <div class="type-header">
-                        <span>INTER</span>
-                        <span>Cuerpo & Lectura</span>
+            <div class="grid-3">
+                <div>
+                    <h3 class="manual-subtitle">Construcción y Símbolo</h3>
+                    <p class="manual-text">Un grid de 3x3 que representa orden en el caos. Los 5 puntos activos
+                        (esquinas + centro) simbolizan cobertura total de perímetro y control de núcleo.</p>
+                </div>
+                <div>
+                    <h3 class="manual-subtitle">Área de Seguridad</h3>
+                    <p class="manual-text">El espacio mínimo alrededor del logo debe ser equivalente a la altura de la
+                        letra "S" del wordmark para garantizar legibilidad.</p>
+                </div>
+                <div>
+                    <h3 class="manual-subtitle">Estilo</h3>
+                    <p class="manual-text">Geométrico, plano, industrial. Evita degradados complejos o sombras
+                        realistas. La estética es "Flat Technical".</p>
+                </div>
+            </div>
+
+            <!-- Variants -->
+            <h3 class="manual-subtitle">Variantes Permitidas</h3>
+            <div class="grid-2">
+                <div class="logo-box light">
+                    <div class="logo">
+                        <div class="logo-matrix">
+                            <div class="cell active"></div>
+                            <div class="cell" style="border-color:#ccc"></div>
+                            <div class="cell active"></div>
+                            <div class="cell" style="border-color:#ccc"></div>
+                            <div class="cell active"></div>
+                            <div class="cell" style="border-color:#ccc"></div>
+                            <div class="cell active"></div>
+                            <div class="cell" style="border-color:#ccc"></div>
+                            <div class="cell active"></div>
+                        </div>
+                        <span style="color:#0B0C10;">STAMP QUALITY</span>
                     </div>
-                    <h1 style="font-family: 'Inter', sans-serif; line-height: 1; margin-bottom: 20px;">Aa Bb Cc 123</h1>
-                    <p class="alphabet" style="font-family: 'Inter', sans-serif;">
-                        Regular (400)<br>
-                        ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-                        abcdefghijklmnopqrstuvwxyz<br>
-                        1234567890 !@#$%^&*()
-                    </p>
+                    <span class="status-badge correct"
+                        style="top: auto; bottom: 15px; left: auto; right: 15px; background:#ddd; color:#333;">Fondo
+                        Claro</span>
+                </div>
+                <div class="logo-box">
+                    <div class="logo-matrix">
+                        <div class="cell active" style="background:white; border-color:white;"></div>
+                        <div class="cell"></div>
+                        <div class="cell active" style="background:white; border-color:white;"></div>
+                        <div class="cell"></div>
+                        <div class="cell active" style="background:white; border-color:white;"></div>
+                        <div class="cell"></div>
+                        <div class="cell active" style="background:white; border-color:white;"></div>
+                        <div class="cell"></div>
+                        <div class="cell active" style="background:white; border-color:white;"></div>
+                    </div>
+                    <span class="status-badge correct">Monocromático</span>
+                </div>
+            </div>
+
+            <!-- Dos and Donts -->
+            <h3 class="manual-subtitle">Uso Incorrecto (Don'ts)</h3>
+            <div class="do-dont-grid">
+                <div class="logo-box dont-item">
+                    <span class="status-badge wrong">No Deformar</span>
+                    <div class="logo distort-stretch">
+                        <div class="logo-matrix">
+                            <div class="cell active"></div>
+                            <div class="cell"></div>
+                            <div class="cell active"></div>
+                            <div class="cell"></div>
+                            <div class="cell active"></div>
+                            <div class="cell"></div>
+                            <div class="cell active"></div>
+                            <div class="cell"></div>
+                            <div class="cell active"></div>
+                        </div>
+                        <span>STAMP QUALITY</span>
+                    </div>
+                </div>
+                <div class="logo-box dont-item">
+                    <span class="status-badge wrong">No Rotar</span>
+                    <div class="logo distort-rotate">
+                        <div class="logo-matrix">
+                            <div class="cell active"></div>
+                            <div class="cell"></div>
+                            <div class="cell active"></div>
+                            <div class="cell"></div>
+                            <div class="cell active"></div>
+                            <div class="cell"></div>
+                            <div class="cell active"></div>
+                            <div class="cell"></div>
+                            <div class="cell active"></div>
+                        </div>
+                        <span>STAMP QUALITY</span>
+                    </div>
+                </div>
+                <div class="logo-box dont-item">
+                    <span class="status-badge wrong">No Cambiar Color</span>
+                    <div class="logo distort-color">
+                        <div class="logo-matrix">
+                            <div class="cell active" style="background:green !important"></div>
+                            <div class="cell"></div>
+                            <div class="cell active" style="background:green !important"></div>
+                            <div class="cell"></div>
+                            <div class="cell active" style="background:green !important"></div>
+                            <div class="cell"></div>
+                            <div class="cell active" style="background:green !important"></div>
+                            <div class="cell"></div>
+                            <div class="cell active" style="background:green !important"></div>
+                        </div>
+                        <span style="color:green !important">STAMP QUALITY</span>
+                    </div>
+                </div>
+                <div class="logo-box dont-item">
+                    <span class="status-badge wrong">No Sombras</span>
+                    <div class="logo" style="filter: drop-shadow(5px 5px 5px red);">
+                        <div class="logo-matrix">
+                            <div class="cell active"></div>
+                            <div class="cell"></div>
+                            <div class="cell active"></div>
+                            <div class="cell"></div>
+                            <div class="cell active"></div>
+                            <div class="cell"></div>
+                            <div class="cell active"></div>
+                            <div class="cell"></div>
+                            <div class="cell active"></div>
+                        </div>
+                        <span>STAMP QUALITY</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer
-        style="text-align: center; padding: 40px; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid #1A1C21;">
-        DOCUMENTO CONFIDENCIAL DE USO INTERNO - STAMP QUALITY 2026
+    <!-- 4. Color System -->
+    <section id="color" class="brand-section">
+        <div class="brand-container">
+            <span class="sec-tag">04. Cromática</span>
+            <h2 class="sec-title">Sistema de Color</h2>
+            <p class="manual-text">Nuestra paleta comunica seriedad ejecutiva (Vino) y profundidad técnica (Negros y
+                Grises). No utilizamos colores primarios saturados comunes para diferenciarnos de la competencia
+                genérica.</p>
+
+            <h3 class="manual-subtitle">Primarios</h3>
+            <div class="grid-2">
+                <div>
+                    <div class="color-chip" style="background: #722F37;"></div>
+                    <div class="color-info">
+                        <strong style="color:white; display:block;">Executive Crimson</strong>
+                        <div class="color-meta"><span>HEX: #722F37</span><span>RGB: 114, 47, 55</span></div>
+                        <p style="color:#999; font-size:0.8rem; margin-top:10px;">POR QUÉ: Evoca pasión contenida,
+                            autoridad y madurez corporativa. Se usa para llamadas a la acción (CTAs) y acentos clave.
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="color-chip" style="background: #0B0C10;"></div>
+                    <div class="color-info">
+                        <strong style="color:white; display:block;">Obsidian Black</strong>
+                        <div class="color-meta"><span>HEX: #0B0C10</span><span>RGB: 11, 12, 16</span></div>
+                        <p style="color:#999; font-size:0.8rem; margin-top:10px;">POR QUÉ: Fondo principal. Reduce la
+                            fatiga visual en dashboards y comunica sofisticación tecnológica.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="manual-subtitle">Accesibilidad & Combinaciones</h3>
+            <div class="grid-2">
+                <div class="card" style="display:flex; align-items:center; gap:20px;">
+                    <div
+                        style="background:#722F37; color:white; padding:10px 20px; border-radius:4px; font-weight:700;">
+                        Texto Blanco sobre Rojo</div>
+                    <span style="color:#4CAF50;">✅ PASA (AA Large)</span>
+                </div>
+                <div class="card" style="display:flex; align-items:center; gap:20px;">
+                    <div style="background:#0B0C10; color:#C5C6C7; padding:10px 20px; border-radius:4px;">Texto Platino
+                        sobre Negro</div>
+                    <span style="color:#4CAF50;">✅ PASA (AAA)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Typography & Voice -->
+    <section id="type" class="brand-section">
+        <div class="brand-container">
+            <span class="sec-tag">05. Tipografía y Voz</span>
+            <h2 class="sec-title">Voz de la Marca</h2>
+
+            <div class="voice-scale">
+                <div class="voice-point" style="color: #666;">Juguetón</div>
+                <div class="voice-point" style="font-weight:700; color:white;">● DIRECTO</div>
+                <div class="voice-point" style="font-weight:700; color:white;">● TÉCNICO</div>
+                <div class="voice-point" style="color: #666;">Académico</div>
+                <div class="voice-point" style="color: #666;">Agresivo</div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <strong style="color:var(--accent);">CÓMO HABLAMOS (DO)</strong>
+                    <p class="manual-text">"Implementamos un Firewall de Calidad Nivel 2 que garantiza 0 PPMs en planta
+                        cliente."</p>
+                    <small style="color:#666;">Conciso, métrico, orientado a soluciones.</small>
+                </div>
+                <div class="card" style="border-color:#552;">
+                    <strong style="color:#888;">CÓMO NO HABLAMOS (DON'T)</strong>
+                    <p class="manual-text" style="color:#888;">"Somos muy buenos revisando tus piezas para que no tengas
+                        problemas."</p>
+                    <small style="color:#666;">Vago, subjetivo, lenguaje blando.</small>
+                </div>
+            </div>
+
+            <h3 class="manual-subtitle">Jerarquía Tipográfica</h3>
+            <div class="type-scale">
+                <div class="type-row">
+                    <div class="type-label">H1 - Titular</div>
+                    <div style="font-family:'Outfit'; font-weight:700; font-size:3rem; color:white;">Stack Operativo
+                    </div>
+                </div>
+                <div class="type-row">
+                    <div class="type-label">H2 - Subtítulo</div>
+                    <div style="font-family:'Outfit'; font-weight:700; font-size:2rem; color:white;">Metodología de
+                        Inspección</div>
+                </div>
+                <div class="type-row">
+                    <div class="type-label">Body - Párrafo</div>
+                    <div style="font-family:'Inter'; font-weight:400; font-size:1rem; color:#C5C6C7;">El texto corrido
+                        debe tener una altura de línea de 1.6 para facilitar la lectura técnica prolongada.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Graphics & Icons -->
+    <section id="graphics" class="brand-section">
+        <div class="brand-container">
+            <span class="sec-tag">06. Recursos Gráficos</span>
+            <h2 class="sec-title">Iconografía y Gráficos</h2>
+
+            <div class="grid-2">
+                <div>
+                    <h3 class="manual-subtitle">Estilo de Iconos</h3>
+                    <p class="manual-text">Lineales, monolinea (stroke constante), esquinas ligeramente redondeadas pero
+                        con base geométrica. Sin rellenos sólidos completos, usamos el "aire" para dar elegancia.</p>
+
+                    <div class="grid-4" style="margin-top:20px;">
+                        <!-- Icon Examples inline SVG -->
+                        <div class="card" style="text-align:center;">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                <path d="M9 3v18" />
+                                <path d="M15 3v18" />
+                                <path d="M3 9h18" />
+                                <path d="M3 15h18" />
+                            </svg>
+                            <p style="font-size:0.8rem; margin-top:10px; color:#666;">Grid (Correcto)</p>
+                        </div>
+                        <div class="card" style="text-align:center;">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                            </svg>
+                            <p style="font-size:0.8rem; margin-top:10px; color:#666;">Data (Correcto)</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="manual-subtitle">Fotografía</h3>
+                    <p class="manual-text">Las imágenes deben tener un tinte azulado/frío o alto contraste. Preferimos
+                        mostrar tecnología, macro-detalles de piezas y personal con equipo de protección (EPP)
+                        impecable.</p>
+                    <div
+                        style="background:var(--brand-surface); padding:20px; border-left:3px solid red; margin-top:20px;">
+                        <strong style="color:white;">EVITAR:</strong> Fotos de stock de gente dándose la mano en
+                        oficinas genéricas. Somos planta, no bufete de abogados.
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="manual-subtitle">Charts y Data en UI</h3>
+            <p class="manual-text">Las gráficas deben ser minimalistas. Fondo oscuro, líneas finas.</p>
+            <div class="card" style="padding:40px; background: #0F1115;">
+                <div
+                    style="display:flex; align-items:flex-end; gap:10px; height:100px; border-bottom:1px solid #333; padding-bottom:10px;">
+                    <div style="width:20px; height:40%; background:#333;"></div>
+                    <div style="width:20px; height:60%; background:#333;"></div>
+                    <div style="width:20px; height:80%; background:#722F37;"></div> <!-- Highlighted Data -->
+                    <div style="width:20px; height:50%; background:#333;"></div>
+                    <div style="width:100%; text-align:right; align-self:center; color:white; font-family:'Outfit';">
+                        98.5% Eficiencia</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 7. Applications -->
+    <section id="applications" class="brand-section">
+        <div class="brand-container">
+            <span class="sec-tag">07. Despliegue</span>
+            <h2 class="sec-title">Aplicaciones</h2>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h3 class="manual-subtitle">Digital</h3>
+                    <ul class="manual-text">
+                        <li><strong>Sitio Web:</strong> Fondo oscuro para ahorro de energía y confort visual.</li>
+                        <li><strong>Presentaciones (PPT):</strong> Diapositivas con mucho espacio negativo. Títulos
+                            grandes en Outfit Bold.</li>
+                        <li><strong>Firmas de Correo:</strong> Minimalistas. Logo a la izquierda, datos alineados a la
+                            derecha.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="manual-subtitle">Impreso (EPP y Papelería)</h3>
+                    <ul class="manual-text">
+                        <li><strong>Chalecos de Seguridad:</strong> Logo en espalda alta (blanco o reflejante).</li>
+                        <li><strong>Cascos:</strong> Sticker frontal centrado de 5cm.</li>
+                        <li><strong>Reportes Técnicos:</strong> Encabezado con franja Vino (#722F37). Tipografía de
+                            cuerpo Inter 10pt para máxima legibilidad de datos.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 60px 0; border-top: 1px solid var(--brand-border); margin-top: 60px;">
+        <div class="logo" style="margin-bottom: 20px; display:inline-flex;">
+            <div class="logo-matrix">
+                <div class="cell active"></div>
+                <div class="cell"></div>
+                <div class="cell active"></div>
+                <div class="cell"></div>
+                <div class="cell active"></div>
+                <div class="cell"></div>
+                <div class="cell active"></div>
+                <div class="cell"></div>
+                <div class="cell active"></div>
+            </div>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">© 2026 Stamp Quality. Todos los derechos
+            reservados.<br>Documento confidencial para uso interno exclusivo.</p>
     </footer>
 
     <script>
