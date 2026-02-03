@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Stamp Quality - Palette Options</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Inter:wght@300;400;600&display=swap');
+
+        body {
+            background: #000;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px;
+            gap: 40px;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .palette-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            width: 100%;
+            max-width: 1400px;
+        }
+
+        .palette-card {
+            background: #111;
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #222;
+        }
+
+        .preview-area {
+            height: 250px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .preview-logo {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            z-index: 2;
+        }
+
+        .preview-btn {
+            padding: 12px 30px;
+            border-radius: 4px;
+            /* Industrial shape */
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-decoration: none;
+            z-index: 2;
+        }
+
+        .swatches {
+            padding: 20px;
+            background: #181818;
+            border-top: 1px solid #222;
+        }
+
+        .swatch-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            justify-content: space-between;
+        }
+
+        .swatch-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .color-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .color-dot {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hex-code {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            color: #AAA;
+            font-size: 0.9rem;
+        }
+
+        .role-label {
+            font-size: 0.75rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* PALETTE 1: COBALT AUTHORITY */
+        .p1 .preview-area {
+            background: radial-gradient(circle at 100% 0%, #0044CC44 0%, transparent 50%), #0A0E17;
+        }
+
+        .p1 .preview-logo {
+            color: white;
+        }
+
+        .p1 .preview-btn {
+            background: #0055FF;
+            color: white;
+            box-shadow: 0 10px 20px rgba(0, 85, 255, 0.3);
+        }
+
+        /* PALETTE 2: COPPER TECH */
+        .p2 .preview-area {
+            background: radial-gradient(circle at 100% 0%, #CD7F3244 0%, transparent 50%), #121212;
+        }
+
+        .p2 .preview-logo {
+            color: white;
+        }
+
+        .p2 .preview-btn {
+            background: transparent;
+            border: 1px solid #D98850;
+            color: #D98850;
+            box-shadow: 0 0 15px rgba(217, 136, 80, 0.1);
+        }
+
+        /* PALETTE 3: CYBER MINT */
+        .p3 .preview-area {
+            background: radial-gradient(circle at 100% 0%, #00FF9D44 0%, transparent 50%), #0F1214;
+        }
+
+        .p3 .preview-logo {
+            color: white;
+        }
+
+        .p3 .preview-btn {
+            background: #00CC7D;
+            color: #000;
+            box-shadow: 0 10px 20px rgba(0, 204, 125, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Propuestas de Paleta de Color</h1>
+    <p style="color: #666; max-width: 600px; text-align: center;">Selecciona la dirección estética que mejor combine
+        autoridad industrial con elegancia.</p>
+
+    <div class="palette-container">
+
+        <!-- OPTION 1 -->
+        <div class="palette-card p1">
+            <div class="preview-area">
+                <div class="preview-logo">STAMP QUALITY</div>
+                <div class="preview-btn">Solicitar Servicio</div>
+            </div>
+            <div class="swatches">
+                <div
+                    style="margin-bottom: 15px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: #555;">
+                    Opción A: Cobalt Authority</div>
+
+                <div class="swatch-row">
+                    <div class="color-info">
+                        <div class="color-dot" style="background: #0055FF;"></div>
+                        <div>
+                            <div class="hex-code">#0055FF</div>
+                            <div class="role-label">Accent / Action</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swatch-row">
+                    <div class="color-info">
+                        <div class="color-dot" style="background: #0A0E17;"></div>
+                        <div>
+                            <div class="hex-code">#0A0E17</div>
+                            <div class="role-label">Background (Navy Black)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swatch-row">
+                    <div class="color-info">
+                        <div class="color-dot" style="background: #E2E8F0;"></div>
+                        <div>
+                            <div class="hex-code">#E2E8F0</div>
+                            <div class="role-label">Typography</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPTION 2 -->
+        <div class="palette-card p2">
+            <div class="preview-area">
+                <div class="preview-logo">STAMP QUALITY</div>
+                <div class="preview-btn">Solicitar Servicio</div>
+            </div>
+            <div class="swatches">
+                <div
+                    style="margin-bottom: 15px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: #555;">
+                    Opción B: Copper Industrial</div>
+
+                <div class="swatch-row">
+                    <div class="color-info">
+                        <div class="color-dot" style="background: #D98850;"></div>
+                        <div>
+                            <div class="hex-code">#D98850</div>
+                            <div class="role-label">Accent (Oxidized Copper)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swatch-row">
+                    <div class="color-info">
+                        <div class="color-dot" style="background: #121212;"></div>
+                        <div>
+                            <div class="hex-code">#121212</div>
+                            <div class="role-label">Background (Matte Carbon)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swatch-row">
+                    <div class="color-info">
+                        <div class="color-dot" style="background: #FFFFFF;"></div>
+                        <div>
+                            <div class="hex-code">#FFFFFF</div>
+                            <div class="role-label">Typography</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPTION 3 -->
+        <div class="palette-card p3">
+            <div class="preview-area">
+                <div class="preview-logo">STAMP QUALITY</div>
+                <div class="preview-btn">Solicitar Servicio</div>
+            </div>
+            <div class="swatches">
+                <div
+                    style="margin-bottom: 15px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: #555;">
+                    Opción C: Cyber Mint</div>
+
+                <div class="swatch-row">
+                    <div class="color-info">
+                        <div class="color-dot" style="background: #00CC7D;"></div>
+                        <div>
+                            <div class="hex-code">#00CC7D</div>
+                            <div class="role-label">Accent (Precision Green)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swatch-row">
+                    <div class="color-info">
+                        <div class="color-dot" style="background: #0F1214;"></div>
+                        <div>
+                            <div class="hex-code">#0F1214</div>
+                            <div class="role-label">Background (Tech Dark)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swatch-row">
+                    <div class="color-info">
+                        <div class="color-dot" style="background: #F0F4F8;"></div>
+                        <div>
+                            <div class="hex-code">#F0F4F8</div>
+                            <div class="role-label">Typography</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

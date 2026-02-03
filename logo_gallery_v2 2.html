@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Stamp Quality | Galería de Logotipos V2 (16-30)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;800&family=JetBrains+Mono:wght@400;800&family=Barlow+Condensed:wght@700;900&display=swap');
+
+        :root {
+            --navy: #1A2B3D;
+            --orange: #FF6B35;
+            --yellow: #FFD700;
+            --slate: #2D3436;
+            --white: #ffffff;
+            --dark: #0a0b0d;
+        }
+
+        body {
+            background: #f0f2f5;
+            margin: 0;
+            padding: 50px;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-family: 'Outfit';
+            font-size: 3rem;
+            color: var(--navy);
+            margin-bottom: 5px;
+        }
+
+        p.subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1400px;
+        }
+
+        .logo-box {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 280px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-bottom: 4px solid var(--orange);
+        }
+
+        .logo-num {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            font-family: 'JetBrains Mono';
+            font-size: 0.7rem;
+            background: #f0f0f0;
+            padding: 3px 10px;
+            border-radius: 5px;
+            color: #777;
+        }
+
+        .logo-label {
+            margin-top: 30px;
+            font-weight: 800;
+            font-family: 'Outfit';
+            font-size: 1.1rem;
+            color: var(--navy);
+            text-transform: uppercase;
+        }
+
+        .logo-desc {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .preview {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 120px;
+        }
+
+        /* --- LOGO STYLES (SVG/CSS) --- */
+
+        /* 16. Wax Seal Modern */
+        .l16 {
+            width: 80px;
+            height: 80px;
+            background: var(--navy);
+            border-radius: 50%;
+            border: 4px dashed var(--orange);
+            display: grid;
+            place-items: center;
+        }
+
+        .l16::after {
+            content: 'S';
+            font-family: 'Outfit';
+            font-size: 2.5rem;
+            color: white;
+            font-weight: 800;
+        }
+
+        /* 17. QR Stamp */
+        .l17 {
+            width: 70px;
+            height: 70px;
+            border: 2px solid var(--navy);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            padding: 5px;
+        }
+
+        .l17 div {
+            background: var(--navy);
+        }
+
+        .l17 div.act {
+            background: var(--orange);
+        }
+
+        /* 18. Sorting Prism */
+        .l18 {
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+
+        .l18 .ray {
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: #eee;
+            top: 50%;
+        }
+
+        .l18 .ray.fixed {
+            background: var(--orange);
+            width: 60%;
+            transform: rotate(15deg);
+            top: 30%;
+            right: 0;
+        }
+
+        .l18 .ray.fixed2 {
+            background: var(--orange);
+            width: 60%;
+            transform: rotate(-15deg);
+            top: 70%;
+            right: 0;
+        }
+
+        /* 19. The Scanner */
+        .l19 {
+            width: 100px;
+            height: 40px;
+            border: 1px solid #ccc;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .l19::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--orange);
+            animation: scan 2s infinite alternate ease-in-out;
+        }
+
+        @keyframes scan {
+            from {
+                left: 0;
+            }
+
+            to {
+                left: 100%;
+            }
+        }
+
+        /* 20. Restoration Link */
+        .l20 {
+            font-family: 'Outfit';
+            font-size: 3rem;
+            color: var(--navy);
+            position: relative;
+        }
+
+        .l20::before {
+            content: '----';
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #ddd;
+        }
+
+        .l20::after {
+            content: '----';
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: var(--orange);
+            clip-path: inset(0 50% 0 0);
+        }
+
+        /* 21. Shield Certified */
+        .l21 {
+            width: 70px;
+            height: 80px;
+            background: var(--navy);
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+            display: grid;
+            place-items: center;
+            color: var(--orange);
+            font-size: 2rem;
+        }
+
+        /* 22. 100% Quality */
+        .l22 {
+            font-family: 'Barlow Condensed';
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--navy);
+            letter-spacing: -2px;
+        }
+
+        .l22 span {
+            color: var(--orange);
+            font-size: 1.5rem;
+            vertical-align: top;
+        }
+
+        /* 23. Funnel Flow */
+        .l23 {
+            width: 0;
+            height: 0;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-top: 50px solid var(--navy);
+            position: relative;
+        }
+
+        .l23::after {
+            content: '';
+            position: absolute;
+            top: -60px;
+            left: -10px;
+            width: 20px;
+            height: 40px;
+            background: var(--orange);
+            border-radius: 100px;
+        }
+
+        /* 24. Magnifier Abstraction */
+        .l24 {
+            width: 50px;
+            height: 50px;
+            border: 8px solid var(--navy);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .l24::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 8px;
+            height: 30px;
+            background: var(--navy);
+            transform: rotate(-45deg);
+        }
+
+        /* 25. The Pulse */
+        .l25 {
+            width: 120px;
+            height: 50px;
+            border-bottom: 2px solid #ddd;
+            position: relative;
+        }
+
+        .l25::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            width: 60%;
+            height: 40px;
+            border: 3px solid var(--orange);
+            border-bottom: none;
+            clip-path: polygon(0 100%, 10% 100%, 20% 0, 30% 100%, 40% 100%, 50% -50%, 60% 100%, 100% 100%);
+        }
+
+        /* 26. Third Party Link */
+        .l26 {
+            display: flex;
+            gap: 5px;
+        }
+
+        .l26 div {
+            width: 30px;
+            height: 40px;
+            background: var(--navy);
+            border-radius: 4px;
+        }
+
+        .l26 div.middle {
+            background: var(--orange);
+            transform: translateY(-10px);
+        }
+
+        /* 27. Industrial Knot */
+        .l27 {
+            width: 60px;
+            height: 60px;
+            border: 10px double var(--navy);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+        }
+
+        .l27::after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: var(--orange);
+            transform: rotate(45deg);
+        }
+
+        /* 28. Diamond Under Pressure */
+        .l28 {
+            width: 60px;
+            height: 60px;
+            background: var(--navy);
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            display: grid;
+            place-items: center;
+            border: 2px solid white;
+        }
+
+        .l28::after {
+            content: 'Q';
+            color: var(--orange);
+            font-family: 'Outfit';
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+
+        /* 29. Dynamic S-Stamp */
+        .l29 {
+            font-family: 'Outfit';
+            font-weight: 800;
+            font-size: 4rem;
+            background: linear-gradient(135deg, var(--navy) 50%, var(--orange) 50%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* 30. Metric Guard */
+        .l30 {
+            display: flex;
+            align-items: flex-end;
+            gap: 4px;
+        }
+
+        .l30 .bar {
+            width: 15px;
+            background: #eee;
+        }
+
+        .l30 .bar.h1 {
+            height: 40px;
+        }
+
+        .l30 .bar.h2 {
+            height: 60px;
+            background: var(--orange);
+        }
+
+        .l30 .bar.h3 {
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Stamp Quality: Galería V2 (16-30)</h1>
+    <p class="subtitle">En esta segunda iteración, exploramos el concepto literal de <b>SELLO</b> (Stamp) y
+        abstracciones ingeniosas de tus servicios de <b>Inspección, Sorteo y Retrabajo</b> para comunicar autoridad
+        absoluta.</p>
+
+    <div class="gallery">
+
+        <!-- 16 -->
+        <div class="logo-box">
+            <span class="logo-num">OPT_16</span>
+            <div class="preview">
+                <div class="l16"></div>
+            </div>
+            <div class="logo-label">The Modern Wax</div>
+            <div class="logo-desc">El sello clásico de lacre, pero con tipografía e ingeniería moderna.</div>
+        </div>
+
+        <!-- 17 -->
+        <div class="logo-box">
+            <span class="logo-num">OPT_17</span>
+            <div class="preview">
+                <div class="l17">
+                    <div class="act"></div>
+                    <div></div>
+                    <div class="act"></div>
+                    <div></div>
+                    <div class="act"></div>
+                    <div></div>
+                    <div class="act"></div>
+                    <div></div>
+                    <div class="act"></div>
+                </div>
+            </div>
+            <div class="logo-label">Digital Quality Stamp</div>
+            <div class="logo-desc">Un sello basado en datos y matrices de calidad (LPA/ILU).</div>
+        </div>
+
+        <!-- 18 -->
+        <div class="logo-box">
+            <span class="logo-num">OPT_18</span>
+            <div class="preview">
+                <div class="l18">
+                    <div class="ray"></div>
+                    <div class="ray fixed"></div>
+                    <div class="ray fixed2"></div>
+                </div>
+            </div>
+            <div class="logo-label">Sorting Prism</div>
+            <div class="logo-desc">Representa el <b>Sorteo</b>: el flujo entra y se divide entre OK y NG.</div>
+        </div>
+
+        <!-- 19 -->
+        <div class="logo-box">
+            <span class="logo-num">OPT_19</span>
+            <div class="preview">
+                <div class="l19-container">
+                    <div class="l19"></div>
+                    <div style="font-family:'JetBrains Mono'; font-size:0.8rem; color:var(--navy); letter-spacing:3px;">
+                        STAMP QUALITY</div>
+                </div>
+            </div>
+            <div class="logo-label">Active Scanner</div>
+            <div class="logo-desc">Abstracción de la <b>Inspección</b> visual y dimensional en sitio.</div>
+        </div>
+
+        <!-- 20 -->
+        <div class="logo-box">
+            <span class="logo-num">OPT_20</span>
+            <div class="preview">
+                <div class="l20">QUALITY</div>
+            </div>
+            <div class="logo-label">Restoration Link</div>
+            <div class="logo-desc">Simboliza el <b>Retrabajo</b>: mendar lo roto para hacerlo nuevo.</div>
+        </div>
+
+        <!-- 21 -->
+        <div class="logo-box">
+            <span class="logo-num">OPT_21</span>
+            <div class="preview">
+                <div class="l21"><span>STAMP<br>QUALITY</span></div>
+            </div>
+            <div class="logo-label">Shield Certified</div>
+            <div class="logo-desc">Protección y garantía. El sello que blinda la operación.</div>
+        </div>
+
+        <!-- 22 -->
+        <div class="logo-box">
+            <span class="logo-num">OPT_22</span>
+            <div class="preview">
+                <div class="l22">STAMP QUALITY<span>100%</span></div>
+            </div>
+            <div class="logo-label">Total Volume Seal</div>
+            <div class="logo-desc">Comunicación directa: Inspeccionamos el 100% del material.</div>
+        </div>
+
+        <!-- 23 -->
+        <div class="logo-box">
+            <span class="logo-num">OPT_23</span>
+            <div class="preview">
+                <div class="l23-container">
+                    <div class="l23"></div>
+                    <div style="font-family:'Outfit'; font-weight:800; font-size:1.4rem; color:var(--navy);">
+                        STAMP<br>QUALITY</div>
+                </div>
+            </div>
+            <div class="logo-label">Quality Funnel</div>
+            <div class="logo-desc">El proceso de clasificación que solo deja pasar lo perfecto.</div>
+        </div>
+
+        <!-- 24 -->
+        <div class="logo-box">
+            <span class="logo-num">OPT_24</span>
+            <div class="preview">
+                <div class="l24-container">
+                    <div class="l24"></div>
+                    <div style="font-family:'Outfit'; font-weight:800; font-size:1.4rem; color:var(--navy);">
+                        STAMP<br>QUALITY</div>
+                </div>
+            </div>
+            <div class="logo-label">The Lens</div>
+            <div class="logo-desc">Enfoque microscópico en los detalles que otros ignoran.</div>
+        </div>
+
+        <!-- 25 -->
+        <div class="logo-box">
+            <span class="logo-num">OPT_25</span>
+            <div class="preview">
+                <div class="l25-container">
+                    <div class="l25"></div>
+                    <div style="font-family:'JetBrains Mono'; font-size:0.75rem; color:var(--navy); font-weight:800;">
+                        STAMP QUALITY MONITOR</div>
+                </div>
+            </div>
+            <div class="logo-label">Operational Pulse</div>
+            <div class="logo-desc">El monitoreo constante de la salud operativa de tu planta.</div>
+        </div>
+
+        <!-- 26 -->
+        <div class="logo-box">
+            <span class="logo-num">OPT_26</span>
+            <div class="preview">
+                <div class="l26">
+                    <div></div>
+                    <div class="middle"></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="logo-label">Third Party Link</div>
+            <div class="logo-desc">Tercería técnica: el enlace de confianza entre proveedor y cliente.</div>
+        </div>
+
+        <!-- 27 -->
+        <div class="logo-box">
+            <span class="logo-num">OPT_27</span>
+            <div class="preview">
+                <div class="l27"></div>
+            </div>
+            <div class="logo-label">Industrial Knot</div>
+            <div class="logo-desc">Complejidad resuelta. Un nudo firme que asegura la calidad.</div>
+        </div>
+
+        <!-- 28 -->
+        <div class="logo-box" style="background:var(--navy); color:white;">
+            <span class="logo-num">OPT_28</span>
+            <div class="preview">
+                <div class="l28"></div>
+            </div>
+            <div class="logo-label" style="color:white">Diamond Under Pressure</div>
+            <div class="logo-desc">Calidad superior nacida bajo la presión operativa de la industria.</div>
+        </div>
+
+        <!-- 29 -->
+        <div class="logo-box">
+            <span class="logo-num">OPT_29</span>
+            <div class="preview">
+                <div class="l29">S</div>
+            </div>
+            <div class="logo-label">Two-Tone Stamp</div>
+            <div class="logo-desc">Dualidad entre el riesgo (Orange) y la contención (Navy).</div>
+        </div>
+
+        <!-- 30 -->
+        <div class="logo-box">
+            <span class="logo-num">OPT_30</span>
+            <div class="preview">
+                <div class="l30">
+                    <div class="bar h1"></div>
+                    <div class="bar h2"></div>
+                    <div class="bar h3"></div>
+                </div>
+            </div>
+            <div class="logo-label">Metric Guard</div>
+            <div class="logo-desc">Control basado en métricas reales de inspección y retrabajo.</div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

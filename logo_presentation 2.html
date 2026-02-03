@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Stamp Quality | Conceptos de Logotipo Vectorial</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@800&family=JetBrains+Mono&family=Barlow+Condensed:wght@900&display=swap');
+
+        body {
+            background: #f0f2f5;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .logo-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .logo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .label {
+            margin-top: 30px;
+            font-weight: bold;
+            color: #333;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .desc {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #666;
+            max-width: 250px;
+        }
+
+        /* --- LOGO 1: ELITE SEAL --- */
+        .elite-seal {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .elite-seal .icon {
+            width: 80px;
+            height: 80px;
+            background: #1A2B3D;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .elite-seal .icon::after {
+            content: 'SQ';
+            color: #FF6B35;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .elite-seal .text {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 2rem;
+            color: #1A2B3D;
+            line-height: 0.8;
+            text-align: left;
+        }
+
+        .elite-seal .text span {
+            display: block;
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            color: #FF6B35;
+            margin-top: 5px;
+        }
+
+        /* --- LOGO 2: DARK PRECISION --- */
+        .dark-precision {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #0a0b0d;
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .dark-precision svg {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        .dark-precision .text {
+            font-family: 'JetBrains Mono', monospace;
+            color: white;
+            letter-spacing: 5px;
+            font-weight: 300;
+            border-top: 1px solid #FF6B35;
+            padding-top: 10px;
+        }
+
+        /* --- LOGO 3: HIGH VISIBILITY --- */
+        .high-vis {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .high-vis .box {
+            width: 60px;
+            height: 60px;
+            background: #FFD700;
+            display: grid;
+            place-items: center;
+            clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+        }
+
+        .high-vis .box::after {
+            content: 'OK';
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: #222529;
+        }
+
+        .high-vis .text {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: 3rem;
+            color: #222529;
+            transform: skew(-10deg);
+            line-height: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 style="font-family: 'Outfit', sans-serif; margin-bottom: 50px;">Stamp Quality: Conceptos de Marca</h1>
+
+    <div class="container">
+
+        <!-- Opc 1 -->
+        <div class="logo-card">
+            <div class="elite-seal">
+                <div class="icon"></div>
+                <div class="text">STAMP<br>QUALITY<span>INDUSTRIAL</span></div>
+            </div>
+            <div class="label">Elite Seal</div>
+            <p class="desc">Autoridad, estabilidad y certificación técnica.</p>
+        </div>
+
+        <!-- Opc 2 -->
+        <div class="logo-card" style="background: #0a0b0d;">
+            <div class="dark-precision">
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="48" fill="none" stroke="#333" stroke-width="0.5" />
+                    <line x1="50" y1="0" x2="50" y2="100" stroke="#333" stroke-width="0.5" />
+                    <line x1="0" y1="50" x2="100" y2="50" stroke="#333" stroke-width="0.5" />
+                    <text x="50" y="60" text-anchor="middle" font-family="'JetBrains Mono'" font-size="25"
+                        fill="#FF6B35" style="font-weight: 800;">SQ</text>
+                    <rect x="45" y="45" width="10" height="10" fill="none" stroke="#FF6B35" stroke-width="1" />
+                </svg>
+                <div class="text">STAMP_QUALITY</div>
+            </div>
+            <div class="label" style="color: white;">Dark Precision</div>
+            <p class="desc" style="color: #888;">Ingeniería milimétrica y control de datos.</p>
+        </div>
+
+        <!-- Opc 3 -->
+        <div class="logo-card">
+            <div class="high-vis">
+                <div class="box"></div>
+                <div class="text">STAMP<br>QUALITY</div>
+            </div>
+            <div class="label">High Visibility</div>
+            <p class="desc">Acción inmediata y contención radical en planta.</p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

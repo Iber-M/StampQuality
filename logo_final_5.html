@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stamp Quality | 5 Propuestas Finales de Logotipo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 60px 20px;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            color: #1A2B3D;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .gallery {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            gap: 50px;
+        }
+
+        .logo-option {
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .logo-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .logo-preview {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 250px;
+            background: #fafbfc;
+            border-radius: 15px;
+            padding: 40px;
+            position: relative;
+        }
+
+        .logo-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .option-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            color: #FF6B35;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .logo-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            color: #1A2B3D;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .logo-description {
+            font-size: 1.05rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .logo-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .logo-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .logo-features li::before {
+            content: '✓';
+            color: #FF6B35;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Logo Styles */
+
+        /* Option 1: The Authority Seal */
+        .logo-1 {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-1-icon {
+            width: 100px;
+            height: 100px;
+            background: #1A2B3D;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 4px solid #FF6B35;
+        }
+
+        .logo-1-icon::after {
+            content: '✓';
+            color: #FF6B35;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .logo-1-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-1-text .main {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1A2B3D;
+            line-height: 0.9;
+        }
+
+        .logo-1-text .sub {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1A2B3D;
+            line-height: 0.9;
+        }
+
+        .logo-1-text .tagline {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            color: #FF6B35;
+            letter-spacing: 3px;
+            margin-top: 8px;
+            text-transform: uppercase;
+        }
+
+        /* Option 2: The Industrial Mark */
+        .logo-2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .logo-2-mark {
+            width: 120px;
+            height: 120px;
+            background: #1A2B3D;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 0 0 8px rgba(255, 107, 53, 0.2);
+        }
+
+        .logo-2-mark::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            border: 3px solid #FF6B35;
+            border-radius: 50%;
+        }
+
+        .logo-2-mark::after {
+            content: 'SQ';
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            z-index: 1;
+        }
+
+        .logo-2-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1A2B3D;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        /* Option 3: The Precision System */
+        .logo-3 {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .logo-3-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 25px);
+            gap: 8px;
+        }
+
+        .logo-3-grid .cell {
+            width: 25px;
+            height: 25px;
+            background: #e0e0e0;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+
+        .logo-3-grid .cell.active {
+            background: #FF6B35;
+        }
+
+        .logo-3-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1A2B3D;
+            line-height: 1.1;
+        }
+
+        .logo-3-text span {
+            display: block;
+            font-size: 1.2rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Option 4: The Shield */
+        .logo-4 {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo-4-shield {
+            width: 100px;
+            height: 120px;
+            background: linear-gradient(135deg, #1A2B3D 0%, #2d4a5f 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 20px;
+            position: relative;
+        }
+
+        .logo-4-shield::before {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: #FF6B35;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+
+        .logo-4-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: #1A2B3D;
+            line-height: 1;
+        }
+
+        .logo-4-text .quality {
+            color: #FF6B35;
+        }
+
+        /* Option 5: The Modern Stamp */
+        .logo-5 {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 30px 50px;
+            border: 4px dashed #1A2B3D;
+            border-radius: 15px;
+            background: white;
+        }
+
+        .logo-5-top {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1A2B3D;
+            letter-spacing: 1px;
+        }
+
+        .logo-5-divider {
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #FF6B35, transparent);
+        }
+
+        .logo-5-bottom {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1A2B3D;
+            letter-spacing: 1px;
+        }
+
+        .logo-5-seal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: #FF6B35;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.5rem;
+            transform: rotate(-15deg);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        @media (max-width: 1000px) {
+            .logo-option {
+                grid-template-columns: 1fr;
+                padding: 40px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Stamp Quality</h1>
+        <p>5 propuestas de identidad visual diseñadas para comunicar autoridad, precisión y excelencia en control de
+            calidad industrial.</p>
+    </div>
+
+    <div class="gallery">
+
+        <!-- Option 1 -->
+        <div class="logo-option">
+            <div class="logo-preview">
+                <div class="logo-1">
+                    <div class="logo-1-icon"></div>
+                    <div class="logo-1-text">
+                        <div class="main">STAMP</div>
+                        <div class="sub">QUALITY</div>
+                        <div class="tagline">Industrial Excellence</div>
+                    </div>
+                </div>
+            </div>
+            <div class="logo-info">
+                <div class="option-number">OPCIÓN 01</div>
+                <h2 class="logo-name">The Authority Seal</h2>
+                <p class="logo-description">
+                    Un sello hexagonal que simboliza certificación y garantía. El checkmark en naranja representa la
+                    aprobación y el control de calidad. Diseño clásico pero moderno, ideal para proyectar estabilidad y
+                    confianza corporativa.
+                </p>
+                <ul class="logo-features">
+                    <li>Símbolo de certificación reconocible</li>
+                    <li>Tipografía robusta y profesional</li>
+                    <li>Versatilidad en aplicaciones (digital e impreso)</li>
+                    <li>Comunica autoridad y experiencia</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Option 2 -->
+        <div class="logo-option">
+            <div class="logo-preview">
+                <div class="logo-2">
+                    <div class="logo-2-mark"></div>
+                    <div class="logo-2-text">STAMP QUALITY</div>
+                </div>
+            </div>
+            <div class="logo-info">
+                <div class="option-number">OPCIÓN 02</div>
+                <h2 class="logo-name">The Industrial Mark</h2>
+                <p class="logo-description">
+                    Un monograma circular que funciona como sello de aprobación. El círculo concéntrico en naranja
+                    representa el enfoque preciso y la atención al detalle. Perfecto para aplicaciones donde se necesita
+                    un símbolo fuerte e independiente.
+                </p>
+                <ul class="logo-features">
+                    <li>Monograma memorable y distintivo</li>
+                    <li>Funciona excelente como isotipo independiente</li>
+                    <li>Diseño circular equilibrado y armonioso</li>
+                    <li>Ideal para uniformes y equipo industrial</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Option 3 -->
+        <div class="logo-option">
+            <div class="logo-preview">
+                <div class="logo-3">
+                    <div class="logo-3-grid">
+                        <div class="cell active"></div>
+                        <div class="cell"></div>
+                        <div class="cell active"></div>
+                        <div class="cell"></div>
+                        <div class="cell active"></div>
+                        <div class="cell"></div>
+                        <div class="cell active"></div>
+                        <div class="cell"></div>
+                        <div class="cell active"></div>
+                    </div>
+                    <div class="logo-3-text">
+                        STAMP<br>QUALITY
+                        <span>Inspection Systems</span>
+                    </div>
+                </div>
+            </div>
+            <div class="logo-info">
+                <div class="option-number">OPCIÓN 03</div>
+                <h2 class="logo-name">The Precision System</h2>
+                <p class="logo-description">
+                    Una matriz de inspección que representa las auditorías LPA y el sistema de habilidades ILU. Los
+                    cuadros activos en naranja simbolizan los puntos de control y la metodología sistemática de Stamp
+                    Quality.
+                </p>
+                <ul class="logo-features">
+                    <li>Representa visualmente la metodología LPA/ILU</li>
+                    <li>Comunica sistemas y procesos estructurados</li>
+                    <li>Estética técnica y de ingeniería</li>
+                    <li>Diferenciación clara en el mercado</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Option 4 -->
+        <div class="logo-option">
+            <div class="logo-preview">
+                <div class="logo-4">
+                    <div class="logo-4-shield"></div>
+                    <div class="logo-4-text">
+                        STAMP<br><span class="quality">QUALITY</span>
+                    </div>
+                </div>
+            </div>
+            <div class="logo-info">
+                <div class="option-number">OPCIÓN 04</div>
+                <h2 class="logo-name">The Shield</h2>
+                <p class="logo-description">
+                    Un escudo de protección con un diamante central que simboliza la fortaleza bajo presión. Representa
+                    la función de Stamp Quality como barrera de protección contra defectos y paros de línea.
+                </p>
+                <ul class="logo-features">
+                    <li>Simbolismo de protección y seguridad</li>
+                    <li>Comunica la función de "contención"</li>
+                    <li>Diseño premium con gradientes sutiles</li>
+                    <li>Proyecta confianza y solidez</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Option 5 -->
+        <div class="logo-option">
+            <div class="logo-preview" style="background: #e8eef3;">
+                <div class="logo-5">
+                    <div class="logo-5-top">STAMP</div>
+                    <div class="logo-5-divider"></div>
+                    <div class="logo-5-bottom">QUALITY</div>
+                    <div class="logo-5-seal">✓</div>
+                </div>
+            </div>
+            <div class="logo-info">
+                <div class="option-number">OPCIÓN 05</div>
+                <h2 class="logo-name">The Modern Stamp</h2>
+                <p class="logo-description">
+                    Un sello literal con borde punteado que evoca los sellos de aprobación tradicionales, pero con una
+                    ejecución moderna y limpia. El sello de verificación en la esquina refuerza el concepto de
+                    certificación.
+                </p>
+                <ul class="logo-features">
+                    <li>Concepto literal de "Stamp" (sello)</li>
+                    <li>Diseño único y memorable</li>
+                    <li>Funciona excelente en documentación</li>
+                    <li>Evoca confianza y oficialidad</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
