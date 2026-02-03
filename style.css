@@ -1110,6 +1110,11 @@ footer {
 }
 
 @media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+
     .results-grid {
         grid-template-columns: 1fr;
     }
