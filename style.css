@@ -21,7 +21,7 @@
     /* Backgrounds */
     --bg: #0B0C10;
     --surface: #141619;
-    --surface-glass: rgba(20, 22, 25, 0.9);
+    --surface-glass: rgba(20, 22, 25, 0.95);
 
     /* Text: Silver & Platinum */
     --text-main: #C5C6C7;
@@ -87,7 +87,7 @@
     /* Soft Smoke Gray */
     --surface: #EAECEF;
     /* Smoke Gray Surface */
-    --surface-glass: rgba(244, 246, 248, 0.9);
+    --surface-glass: rgba(239, 241, 243, 0.98);
 
     --primary: #EFF1F3;
     --primary-light: #FFFFFF;
