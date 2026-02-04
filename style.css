@@ -1128,7 +1128,7 @@ footer {
     display: block;
     height: 2px;
     width: 100%;
-    background: white;
+    background: var(--text-header);
     border-radius: 2px;
     transition: 0.3s;
 }
