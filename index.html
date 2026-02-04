@@ -84,6 +84,20 @@
             <button class="lang-btn" data-lang="zh" title="中文">中文</button>
             <button class="lang-btn" data-lang="ja" title="日本語">日本語</button>
             <button class="lang-btn" data-lang="de" title="Deutsch">DE</button>
+            <button id="theme-toggle" class="theme-btn" title="Toggle Theme"
+                style="background: transparent; border: none; cursor: pointer; color: var(--text-muted); padding: 5px; display: flex; align-items: center; justify-content: center; transition: 0.3s;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </button>
         </div>
     </nav>
 
@@ -512,6 +526,8 @@
     <script src="translations.js"></script>
     <script src="apply-i18n.js"></script>
     <script src="i18n.js"></script>
+    <!-- Theme System -->
+    <script src="theme.js"></script>
     <!-- Mobile Menu Script -->
     <script src="mobile-menu.js"></script>
 </body>
