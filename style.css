@@ -397,6 +397,15 @@ nav {
     /* Ensure it takes its own line */
 }
 
+
+.sec-header {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .sec-title {
     font-size: 3.5rem;
     /* Increased size for authority */
@@ -717,6 +726,10 @@ footer {
     .hero-grid {
         grid-template-columns: 1fr;
         text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .hero-text {
