@@ -1164,7 +1164,7 @@ footer {
         top: 70px;
         right: 0;
         height: calc(100vh - 70px);
-        background: rgba(11, 12, 16, 0.98);
+        background: var(--surface-glass);
         backdrop-filter: blur(15px);
         width: 100%;
         flex-direction: column;
@@ -1172,7 +1172,7 @@ footer {
         justify-content: center;
         transform: translateX(100%);
         transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-        border-left: 1px solid rgba(114, 47, 55, 0.2);
+        border-left: 1px solid var(--nav-border);
         gap: 30px;
         padding-bottom: 100px;
     }
