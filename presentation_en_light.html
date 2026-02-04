@@ -17,10 +17,10 @@
             --slide-height: 1080px;
 
             /* Light Mode Palette - Optimized for Eye Comfort */
-            --brand-bg: #F5F5F7;
-            /* Soft Cloud Gray instead of Pure White */
-            --brand-surface: #FFFFFF;
-            /* Pure White now serves as the card "surface" */
+            --brand-bg: #E3E4E6;
+            /* Platinum/Concrete Gray to reduce glare */
+            --brand-surface: #F5F5F7;
+            /* Off-white surface, softer than pure white */
 
             /* Very light gray for cards */
             --brand-accent: #722F37;
@@ -74,8 +74,8 @@
                 height: 1080px;
                 margin: 0;
                 page-break-after: always;
-                background-color: #F5F5F7 !important;
-                /* Matches screen look */
+                background-color: var(--brand-bg) !important;
+                /* Matches screen look (softer than pure white) */
                 border: none;
                 zoom: 1 !important;
             }
@@ -246,8 +246,8 @@
 
         /* CARDS */
         .p-card {
-            background: #FFFFFF;
-            /* Use pure white for cards to pop against gray bg */
+            background: var(--brand-surface);
+            /* Use softer surface color instead of pure white */
             padding: 35px;
             border: 1px solid var(--brand-border);
             border-radius: 4px;
@@ -312,7 +312,7 @@
             text-align: center;
             padding: 40px;
             border: 1px solid var(--brand-border);
-            background: #FFFFFF;
+            background: var(--brand-surface);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -351,7 +351,7 @@
         }
 
         .client-box {
-            background: #FFFFFF;
+            background: var(--brand-surface);
             padding: 30px;
             border-radius: 4px;
             display: flex;
@@ -391,19 +391,18 @@
         <!-- SLIDE 1: COVER -->
         <div class="slide cover-slide">
             <div class="cover-content">
-                <!-- Logo Matrix (Subtle) -->
-                <div class="logo-matrix"
-                    style="transform: scale(3); margin-bottom: 80px; display: inline-grid; opacity: 0.1;">
-                    <!-- Same geometric shape essentially, just keeping the structure -->
-                    <div class="cell active" style="background: #000;"></div>
-                    <div class="cell"></div>
-                    <div class="cell active" style="background: #000;"></div>
-                    <div class="cell"></div>
-                    <div class="cell active" style="background: #000;"></div>
-                    <div class="cell"></div>
-                    <div class="cell active" style="background: #000;"></div>
-                    <div class="cell"></div>
-                    <div class="cell active" style="background: #000;"></div>
+                <!-- Logo Matrix -->
+                <!-- Logo Matrix -->
+                <div class="logo-matrix" style="transform: scale(3); margin-bottom: 80px; display: inline-grid;">
+                    <div class="cell active" style="background: #722F37 !important;"></div>
+                    <div class="cell" style="background: #E6E6E6 !important;"></div>
+                    <div class="cell active" style="background: #722F37 !important;"></div>
+                    <div class="cell" style="background: #E6E6E6 !important;"></div>
+                    <div class="cell active" style="background: #722F37 !important;"></div>
+                    <div class="cell" style="background: #E6E6E6 !important;"></div>
+                    <div class="cell active" style="background: #722F37 !important;"></div>
+                    <div class="cell" style="background: #E6E6E6 !important;"></div>
+                    <div class="cell active" style="background: #722F37 !important;"></div>
                 </div>
 
                 <div class="cover-logo"><span>STAMP QUALITY</span></div>

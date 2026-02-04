@@ -65,14 +65,29 @@
     --method-item-border: rgba(255, 255, 255, 0.05);
     --method-icon-bg: #1F2833;
     --method-icon-color: var(--text-main);
+
+    /* Component Specific */
+    --nav-border: rgba(114, 47, 55, 0.3);
+    --sec-border: #1A1C21;
+    --footer-bg: #000000;
+    --footer-border: #1A1C21;
+    --contact-bg: #050608;
+    --contact-glow: rgba(114, 47, 55, 0.1);
+
+    /* Refinements */
+    --results-grad: linear-gradient(to right, #FFF, #999);
+    --logo-filter: grayscale(100%) brightness(1.5);
+    --loc-footer-bg: #08090C;
+    --loc-dot-bg: var(--accent);
 }
 
 [data-theme="light"] {
     /* Light Mode Overrides */
     --bg: #EFF1F3;
     /* Soft Smoke Gray */
-    --surface: #FFFFFF;
-    --surface-glass: rgba(255, 255, 255, 0.9);
+    --surface: #EAECEF;
+    /* Smoke Gray Surface */
+    --surface-glass: rgba(244, 246, 248, 0.9);
 
     --primary: #EFF1F3;
     --primary-light: #FFFFFF;
@@ -89,11 +104,11 @@
 
     /* Light Mode Components */
     --shield-bg: linear-gradient(135deg, #FFFFFF, #E6E8EB);
-    --shield-pct-grad: linear-gradient(to bottom, #333, #9E4244);
-    --card-border: rgba(0, 0, 0, 0.08);
+    --shield-pct-grad: linear-gradient(to bottom, #111, #722F37);
+    --card-border: rgba(0, 0, 0, 0.1);
     /* Visible border on light */
-    --card-hover-bg: #F8F9FA;
-    /* Slightly lighter than bg */
+    --card-hover-bg: #FFFFFF;
+    /* Lighter hover for contrast */
     --split-bg: #E2E4E8;
     /* Darker grey to differentiate */
     --section-alt-bg: #EAECEF;
@@ -105,6 +120,21 @@
     --method-item-border: rgba(0, 0, 0, 0.08);
     --method-icon-bg: #E2E4E8;
     --method-icon-color: var(--accent);
+
+    /* Component Overrides */
+    --nav-border: rgba(114, 47, 55, 0.1);
+    --sec-border: rgba(0, 0, 0, 0.05);
+    --footer-bg: #EFF1F3;
+    --footer-border: rgba(0, 0, 0, 0.1);
+    --contact-bg: #FFFFFF;
+    --contact-glow: rgba(0, 0, 0, 0.05);
+
+    /* Refinements Light */
+    --results-grad: linear-gradient(to right, #1F2833, #722F37);
+    --logo-filter: grayscale(100%) brightness(0.2);
+    /* Make them dark */
+    --loc-footer-bg: #EAECEF;
+    --loc-dot-bg: #722F37;
 }
 
 /* Base Reset & Typography */
@@ -176,7 +206,7 @@ nav {
     width: 100%;
     background: var(--surface-glass);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(114, 47, 55, 0.3);
+    border-bottom: 1px solid var(--nav-border);
     padding: 20px 5%;
     display: flex;
     justify-content: space-between;
@@ -446,7 +476,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-bottom: 1px solid #1A1C21;
+    border-bottom: 1px solid var(--sec-border);
 }
 
 .sec-tag {
@@ -579,7 +609,7 @@ nav {
     color: var(--text-main);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border-bottom: 1px solid #1A1C21;
+    border-bottom: 1px solid var(--sec-border);
 }
 
 .split-bg {
@@ -690,7 +720,7 @@ nav {
 
 .method-item h4 {
     font-size: 1rem;
-    color: white;
+    color: var(--text-header);
     margin-bottom: 5px;
     min-height: 40px;
     /* Align text */
@@ -721,7 +751,7 @@ nav {
 .contact-elite {
     padding: 120px 5%;
     text-align: center;
-    background: #050608;
+    background: var(--contact-bg);
     position: relative;
     overflow: hidden;
 }
@@ -733,7 +763,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 50% 50%, rgba(114, 47, 55, 0.1) 0%, transparent 60%);
+    background: radial-gradient(circle at 50% 50%, var(--contact-glow) 0%, transparent 60%);
     pointer-events: none;
 }
 
@@ -749,7 +779,7 @@ nav {
 }
 
 .contact-card h2 {
-    color: white;
+    color: var(--text-header);
     font-size: 3.5rem;
     line-height: 1;
 }
@@ -776,10 +806,10 @@ nav {
 
 /* Footer */
 footer {
-    background: #000000;
+    background: var(--footer-bg);
     padding: 80px 5%;
     text-align: center;
-    border-top: 1px solid #1A1C21;
+    border-top: 1px solid var(--footer-border);
 }
 
 /* Responsive Adjustments */
@@ -903,7 +933,7 @@ footer {
 
 .res-card:hover {
     padding-left: 35px;
-    border-left-color: white;
+    border-left-color: var(--text-header);
 }
 
 .res-val {
@@ -913,14 +943,14 @@ footer {
     font-size: 3rem;
     line-height: 1;
     margin-bottom: 10px;
-    background: linear-gradient(to right, #FFF, #999);
+    background: var(--results-grad);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .res-card h4 {
-    color: white;
+    color: var(--text-header);
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
@@ -1033,14 +1063,14 @@ footer {
     width: auto;
     height: auto;
     object-fit: contain;
-    filter: grayscale(100%) brightness(1.5);
+    filter: var(--logo-filter);
     transition: 0.3s;
 }
 
 .client-logo-box:hover {
     background: rgba(255, 255, 255, 0.05);
     border-color: var(--accent);
-    color: white;
+    color: var(--text-header);
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(114, 47, 55, 0.3);
 }
@@ -1051,9 +1081,9 @@ footer {
 
 /* Discrete Locations Footer */
 .locations-footer {
-    background: #08090C;
+    background: var(--loc-footer-bg);
     padding: 30px 5%;
-    border-top: 1px solid rgba(114, 47, 55, 0.2);
+    border-top: 1px solid var(--nav-border);
 }
 
 .locations-compact {
@@ -1072,7 +1102,7 @@ footer {
 .loc-dot {
     width: 4px;
     height: 4px;
-    background: var(--accent);
+    background: var(--loc-dot-bg);
     border-radius: 50%;
     display: inline-block;
 }
