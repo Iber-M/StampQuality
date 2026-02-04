@@ -58,6 +58,13 @@
     --split-bg: #08090C;
     --section-alt-bg: #0B0C10;
     /* Dark alt background */
+
+    /* Methodology */
+    --method-bg: linear-gradient(to bottom, #0B0C10, #141619);
+    --method-item-bg: rgba(255, 255, 255, 0.03);
+    --method-item-border: rgba(255, 255, 255, 0.05);
+    --method-icon-bg: #1F2833;
+    --method-icon-color: var(--text-main);
 }
 
 [data-theme="light"] {
@@ -91,6 +98,13 @@
     /* Darker grey to differentiate */
     --section-alt-bg: #EAECEF;
     /* Slightly different from bg */
+
+    /* Methodology Light */
+    --method-bg: linear-gradient(to bottom, #EFF1F3, #E6E8EB);
+    --method-item-bg: #FFFFFF;
+    --method-item-border: rgba(0, 0, 0, 0.08);
+    --method-icon-bg: #E2E4E8;
+    --method-icon-color: var(--accent);
 }
 
 /* Base Reset & Typography */
@@ -624,7 +638,7 @@ nav {
 /* Methodology Section - 5 Pillars */
 .methodology-section {
     padding: var(--section-pad) 5%;
-    background: linear-gradient(to bottom, #0B0C10, #141619);
+    background: var(--method-bg);
     border-bottom: 1px solid #222;
     text-align: center;
 }
@@ -638,10 +652,10 @@ nav {
 }
 
 .method-item {
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--method-item-bg);
     padding: 30px 20px;
     border-radius: var(--radius-sm);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--method-item-border);
     transition: 0.3s;
     display: flex;
     flex-direction: column;
@@ -659,10 +673,10 @@ nav {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: #1F2833;
+    background: var(--method-icon-bg);
     display: grid;
     place-items: center;
-    color: var(--text-main);
+    color: var(--method-icon-color);
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: 0.3s;
 }
@@ -870,7 +884,7 @@ footer {
 
 /* Operational Results */
 .dark-alt {
-    background: #08090C;
+    background: var(--section-alt-bg);
 }
 
 .results-grid {
