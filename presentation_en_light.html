@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stamp Quality | Corporate Presentation (Light)</title>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Presentation Specific Overrides - LIGHT MODE */
+        :root {
+            --slide-width: 1920px;
+            --slide-height: 1080px;
+
+            /* Light Mode Palette - Optimized for Eye Comfort */
+            --brand-bg: #F5F5F7;
+            /* Soft Cloud Gray instead of Pure White */
+            --brand-surface: #FFFFFF;
+            /* Pure White now serves as the card "surface" */
+
+            /* Very light gray for cards */
+            --brand-accent: #722F37;
+            /* Executive Crimson */
+            --brand-accent-sec: #9E4244;
+            /* Secondary Red */
+            --brand-text: #4A4A4A;
+            /* Dark Gray Text */
+            --brand-text-dark: #1A1A1A;
+            /* Nearly Black for Headings */
+            --brand-border: rgba(0, 0, 0, 0.08);
+        }
+
+        /* PRINT STYLES */
+        @page {
+            size: 508mm 286mm;
+            margin: 0;
+        }
+
+        @media print {
+
+            *,
+            *::before,
+            *::after {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                box-shadow: none !important;
+                text-shadow: none !important;
+            }
+
+            html,
+            body {
+                width: 508mm;
+                height: 286mm;
+                margin: 0;
+                padding: 0;
+                background: #FFFFFF;
+                /* Keep pure white for actual printing to save ink */
+            }
+
+            #deck {
+                display: block;
+                padding: 0;
+                gap: 0;
+                transform: none;
+                width: 508mm;
+            }
+
+            .slide {
+                width: 1920px;
+                height: 1080px;
+                margin: 0;
+                page-break-after: always;
+                background-color: #F5F5F7 !important;
+                /* Matches screen look */
+                border: none;
+                zoom: 1 !important;
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #E0E0E0;
+            /* Darker gray for browser wrapper to distinguish slide */
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            overflow-x: hidden;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            min-height: 100vh;
+        }
+
+        #deck {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            transform-origin: top center;
+        }
+
+        .slide {
+            width: var(--slide-width);
+            height: var(--slide-height);
+            background: var(--brand-bg);
+            /* Soft Cloud Gray */
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+            page-break-after: always;
+            border: 1px solid #D1D1D1;
+            box-sizing: border-box;
+        }
+
+        /* Slide Footer */
+        .slide-footer {
+            position: absolute;
+            bottom: 50px;
+            left: 80px;
+            right: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 0.6;
+            font-size: 16px;
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: 2px;
+            border-top: 1px solid var(--brand-border);
+            padding-top: 25px;
+            color: var(--brand-text);
+        }
+
+        /* Slide Content */
+        .slide-content {
+            padding: 100px 120px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+            z-index: 2;
+        }
+
+        .slide-header {
+            margin-bottom: 70px;
+        }
+
+        .slide-tag {
+            color: var(--brand-accent-sec);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+            display: block;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .slide-tag::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: var(--brand-accent);
+        }
+
+        .slide-title {
+            font-size: 5rem;
+            line-height: 1.05;
+            margin: 0;
+            color: var(--brand-text-dark);
+            /* Dark text for title */
+            max-width: 90%;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+        }
+
+        /* --- SLIDE 1: COVER --- */
+        .cover-slide {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: #F5F5F7;
+        }
+
+        .cover-logo span {
+            font-size: 6rem;
+            font-weight: 900;
+            color: var(--brand-text-dark);
+            letter-spacing: 15px;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .cover-tagline {
+            font-size: 1.8rem;
+            color: var(--brand-text);
+            margin-top: 30px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
+
+        /* --- SLIDE 2: INTRO --- */
+        .intro-text {
+            font-size: 2.2rem;
+            color: var(--brand-text);
+            line-height: 1.6;
+            max-width: 1500px;
+            font-weight: 300;
+        }
+
+        .highlight {
+            color: var(--brand-text-dark);
+            font-weight: 700;
+        }
+
+        .firewall-highlight {
+            color: var(--brand-accent);
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        /* --- GRID LAYOUTS --- */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        /* CARDS */
+        .p-card {
+            background: #FFFFFF;
+            /* Use pure white for cards to pop against gray bg */
+            padding: 35px;
+            border: 1px solid var(--brand-border);
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            border-top: 3px solid var(--brand-accent);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+            /* Very subtle shadow */
+        }
+
+        .top-num {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--brand-accent);
+            opacity: 0.2;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .p-card h3,
+        .p-card h4 {
+            font-size: 1.9rem;
+            color: var(--brand-text-dark);
+            /* Dark for headers */
+            margin-top: 5px;
+            margin-bottom: 20px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+        }
+
+        .p-card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        .p-card li {
+            font-size: 1.25rem;
+            color: var(--brand-text);
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            line-height: 1.3;
+        }
+
+        .p-card li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--brand-accent);
+            font-size: 1.5em;
+            top: -5px;
+        }
+
+        /* METRICS */
+        .metric-item {
+            text-align: center;
+            padding: 40px;
+            border: 1px solid var(--brand-border);
+            background: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .metric-val {
+            font-size: 6.5rem;
+            font-weight: 900;
+            color: var(--brand-text-dark);
+            display: block;
+            font-family: 'Outfit', sans-serif;
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+
+        .metric-val.red {
+            color: var(--brand-accent);
+        }
+
+        .metric-label {
+            font-size: 1.5rem;
+            color: var(--brand-accent-sec);
+            display: block;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* CLIENTS */
+        .client-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 40px;
+            align-items: center;
+        }
+
+        .client-box {
+            background: #FFFFFF;
+            padding: 30px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 160px;
+            position: relative;
+            border: 1px solid var(--brand-border);
+        }
+
+        .client-box img {
+            max-width: 85%;
+            max-height: 85%;
+            object-fit: contain;
+            /* CRITICAL FIX: Invert colors to make white logos black, then grayscale */
+            filter: invert(1) grayscale(100%);
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        /* CONTACT HIGHLIGHT */
+        .contact-box {
+            background: var(--brand-surface);
+            border: 1px solid var(--brand-border);
+            padding: 80px 120px;
+            border-radius: 4px;
+            display: inline-block;
+            border-left: 8px solid var(--brand-accent);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="deck">
+
+        <!-- SLIDE 1: COVER -->
+        <div class="slide cover-slide">
+            <div class="cover-content">
+                <!-- Logo Matrix (Subtle) -->
+                <div class="logo-matrix"
+                    style="transform: scale(3); margin-bottom: 80px; display: inline-grid; opacity: 0.1;">
+                    <!-- Same geometric shape essentially, just keeping the structure -->
+                    <div class="cell active" style="background: #000;"></div>
+                    <div class="cell"></div>
+                    <div class="cell active" style="background: #000;"></div>
+                    <div class="cell"></div>
+                    <div class="cell active" style="background: #000;"></div>
+                    <div class="cell"></div>
+                    <div class="cell active" style="background: #000;"></div>
+                    <div class="cell"></div>
+                    <div class="cell active" style="background: #000;"></div>
+                </div>
+
+                <div class="cover-logo"><span>STAMP QUALITY</span></div>
+                <div class="cover-tagline">THE INDUSTRIAL AUTHORITY IN QUALITY & CONTAINMENT</div>
+
+                <div
+                    style="margin-top: 120px; display: inline-block; border: 1px solid #ccc; padding: 20px 50px; border-radius: 50px;">
+                    <span
+                        style="color: var(--brand-text); font-size: 1.4rem; letter-spacing: 3px; font-weight:600;">CORPORATE
+                        PRESENTATION</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: INTRO -->
+        <div class="slide">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-tag">OUR MISSION</span>
+                    <h1 class="slide-title">SAFEGUARDING INDUSTRIAL OPERATIONAL CONTINUITY.</h1>
+                </div>
+                <p class="intro-text">
+                    <span class="highlight">Stamp Quality</span> is the premier containment force in the Bajío region.
+                    Specialists in technical inspection, sorting, and industrial rework.
+                    <br><br>
+                    We are not just a third-party provider; we are an <span class="firewall-highlight">OPERATIONAL
+                        FIREWALL</span> guaranteeing that only conforming material advances in your process.
+                </p>
+            </div>
+            <div class="slide-footer">
+                <span>STAMP QUALITY</span>
+                <span>02 / 09</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: OPERATIONAL STACK (SERVICES) -->
+        <div class="slide">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-tag">TECHNICAL SOLUTIONS</span>
+                    <h2 class="slide-title">Our Operational Stack</h2>
+                </div>
+                <div class="grid-3 card-container">
+                    <div class="p-card">
+                        <div class="top-num">01</div>
+                        <h3>Sorting / Containment</h3>
+                        <ul>
+                            <li>Emergency Quality Walls (GP-12)</li>
+                            <li>CS1 / CS2 Containment</li>
+                            <li>Specialized Sorting (OK/NG)</li>
+                            <li>Suspect Material Segregation</li>
+                        </ul>
+                    </div>
+                    <div class="p-card">
+                        <div class="top-num">02</div>
+                        <h3>On-Site Inspection</h3>
+                        <ul>
+                            <li>Visual & Dimensional Validation</li>
+                            <li>Gauge & Fixture Application</li>
+                            <li>100% Certified Inspection</li>
+                            <li>Real-time Digital Reporting</li>
+                        </ul>
+                    </div>
+                    <div class="p-card">
+                        <div class="top-num">03</div>
+                        <h3>Rework / Refurbishment</h3>
+                        <ul>
+                            <li>Material Recovery & Salvage</li>
+                            <li>Cosmetic Defect Correction</li>
+                            <li>Deburring & Technical Cleaning</li>
+                            <li>Strict Adherence to Work Instructions (WI)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>STAMP QUALITY</span>
+                <span>03 / 09</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: INSPECTION STRATEGY (OPTIMIZED FOR LIGHT) -->
+        <div class="slide">
+            <div class="slide-content" style="padding: 50px 70px 35px;">
+                <div class="slide-header" style="margin-bottom: 20px;">
+                    <span class="slide-tag">QUALITY PROCESS</span>
+                    <h2 class="slide-title">Inspection Strategy</h2>
+                </div>
+
+                <!-- Optimized Infographic Layout -->
+                <div style="display: flex; flex-direction: column; gap: 22px; max-width: 1650px; margin: 0 auto;">
+
+                    <!-- TOP: Process Steps -->
+                    <div style="display: flex; gap: 15px; justify-content: space-between;">
+                        <!-- Step 1 -->
+                        <div
+                            style="flex: 1; padding: 18px 20px; border-radius: 8px; border: 1px solid var(--brand-border); position: relative; background: var(--brand-surface);">
+                            <div
+                                style="position: absolute; top: -12px; left: 15px; width: 40px; height: 40px; background: linear-gradient(135deg, #722F37 0%, #9E4244 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(114, 47, 55, 0.3); border: 3px solid #fff;">
+                                <span
+                                    style="color: #fff; font-size: 1.3rem; font-weight: 900; font-family: 'Outfit';">1</span>
+                            </div>
+                            <h4
+                                style="color: var(--brand-text-dark); font-size: 1.1rem; font-weight: 700; margin: 15px 0 5px 0; font-family: 'Outfit';">
+                                Personnel Selection</h4>
+                            <p style="color: var(--brand-text); font-size: 0.8rem; margin: 0; line-height: 1.3;">Right
+                                people for the right task</p>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div
+                            style="display: flex; align-items: center; color: var(--brand-accent); font-size: 1.8rem; opacity: 0.5;">
+                            →</div>
+
+                        <!-- Step 2 -->
+                        <div
+                            style="flex: 1; padding: 18px 20px; border-radius: 8px; border: 1px solid var(--brand-border); position: relative; background: var(--brand-surface);">
+                            <div
+                                style="position: absolute; top: -12px; left: 15px; width: 40px; height: 40px; background: linear-gradient(135deg, #722F37 0%, #9E4244 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(114, 47, 55, 0.3); border: 3px solid #fff;">
+                                <span
+                                    style="color: #fff; font-size: 1.3rem; font-weight: 900; font-family: 'Outfit';">2</span>
+                            </div>
+                            <h4
+                                style="color: var(--brand-text-dark); font-size: 1.1rem; font-weight: 700; margin: 15px 0 5px 0; font-family: 'Outfit';">
+                                Training</h4>
+                            <p style="color: var(--brand-text); font-size: 0.8rem; margin: 0; line-height: 1.3;">Safety,
+                                5's, WI, Continuous Improvement</p>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div
+                            style="display: flex; align-items: center; color: var(--brand-accent); font-size: 1.8rem; opacity: 0.5;">
+                            →</div>
+
+                        <!-- Step 3 -->
+                        <div
+                            style="flex: 1; padding: 18px 20px; border-radius: 8px; border: 1px solid var(--brand-border); position: relative; background: var(--brand-surface);">
+                            <div
+                                style="position: absolute; top: -12px; left: 15px; width: 40px; height: 40px; background: linear-gradient(135deg, #722F37 0%, #9E4244 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(114, 47, 55, 0.3); border: 3px solid #fff;">
+                                <span
+                                    style="color: #fff; font-size: 1.3rem; font-weight: 900; font-family: 'Outfit';">3</span>
+                            </div>
+                            <h4
+                                style="color: var(--brand-text-dark); font-size: 1.1rem; font-weight: 700; margin: 15px 0 5px 0; font-family: 'Outfit';">
+                                Inspection Rate</h4>
+                            <p style="color: var(--brand-text); font-size: 0.8rem; margin: 0; line-height: 1.3;">
+                                Shipping rate vs inventory coverage</p>
+                        </div>
+                    </div>
+
+                    <!-- MIDDLE: Core Principles -->
+                    <div
+                        style="padding: 25px; border-radius: 8px; border: 1px solid var(--brand-border); background: var(--brand-surface);">
+                        <h3
+                            style="color: var(--brand-accent-sec); font-size: 1.35rem; margin: 0 0 18px 0; font-weight: 700; font-family: 'Outfit'; border-bottom: 2px solid var(--brand-border); padding-bottom: 10px;">
+                            Core Principles</h3>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                            <!-- Items 1-6 -->
+                            <div
+                                style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-left: 3px solid var(--brand-accent); border-radius: 3px; background: #fff;">
+                                <span
+                                    style="color: var(--brand-accent); font-size: 1.2rem; font-weight: 900; font-family: 'Outfit'; min-width: 28px;">01</span>
+                                <span style="color: var(--brand-text-dark); font-size: 0.95rem;">Strict Selection of
+                                    Personnel</span>
+                            </div>
+
+                            <div
+                                style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-left: 3px solid var(--brand-accent); border-radius: 3px; background: #fff;">
+                                <span
+                                    style="color: var(--brand-accent); font-size: 1.2rem; font-weight: 900; font-family: 'Outfit'; min-width: 28px;">02</span>
+                                <span style="color: var(--brand-text-dark); font-size: 0.95rem;">Comprehensive
+                                    Training</span>
+                            </div>
+
+                            <div
+                                style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-left: 3px solid var(--brand-accent); border-radius: 3px; background: #fff;">
+                                <span
+                                    style="color: var(--brand-accent); font-size: 1.2rem; font-weight: 900; font-family: 'Outfit'; min-width: 28px;">03</span>
+                                <span style="color: var(--brand-text-dark); font-size: 0.95rem;">Guaranteed Inspection
+                                    Rate compliance</span>
+                            </div>
+
+                            <div
+                                style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-left: 3px solid var(--brand-accent); border-radius: 3px; background: #fff;">
+                                <span
+                                    style="color: var(--brand-accent); font-size: 1.2rem; font-weight: 900; font-family: 'Outfit'; min-width: 28px;">04</span>
+                                <span style="color: var(--brand-text-dark); font-size: 0.95rem;">Active Shift
+                                    Supervision</span>
+                            </div>
+
+                            <div
+                                style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-left: 3px solid var(--brand-accent); border-radius: 3px; background: #fff;">
+                                <span
+                                    style="color: var(--brand-accent); font-size: 1.2rem; font-weight: 900; font-family: 'Outfit'; min-width: 28px;">05</span>
+                                <span style="color: var(--brand-text-dark); font-size: 0.95rem;">Real-time Skills Matrix
+                                    Tracking</span>
+                            </div>
+
+                            <div
+                                style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-left: 3px solid var(--brand-accent); border-radius: 3px; background: #fff;">
+                                <span
+                                    style="color: var(--brand-accent); font-size: 1.2rem; font-weight: 900; font-family: 'Outfit'; min-width: 28px;">06</span>
+                                <span style="color: var(--brand-text-dark); font-size: 0.95rem;">Daily Layered Process
+                                    Audits (LPA)</span>
+                            </div>
+
+                            <!-- Item 7 -->
+                            <div
+                                style="grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-left: 4px solid var(--brand-accent); border-radius: 3px; background: rgba(114, 47, 55, 0.05);">
+                                <span
+                                    style="color: var(--brand-accent); font-size: 1.3rem; font-weight: 900; font-family: 'Outfit'; min-width: 28px;">07</span>
+                                <span
+                                    style="color: var(--brand-text-dark); font-size: 1rem; line-height: 1.35; font-weight: 700;">100%
+                                    Material Inspection Guarantee</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BOTTOM: Quality Filter -->
+                    <div
+                        style="padding: 20px 30px; border-radius: 8px; border: 1px solid var(--brand-border); background: var(--brand-surface);">
+                        <h3
+                            style="color: var(--brand-accent-sec); font-size: 1.2rem; margin: 0 0 15px 0; font-weight: 700; font-family: 'Outfit'; text-align: center; text-transform: uppercase; letter-spacing: 1.5px;">
+                            Quality Filter</h3>
+
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 12px;">
+                            <!-- Supervision -->
+                            <div
+                                style="padding: 12px 18px; border-radius: 6px; text-align: center; border-left: 3px solid var(--brand-accent); border-top: none; background: #fff;">
+                                <span
+                                    style="color: var(--brand-text-dark); font-size: 0.9rem; font-weight: 700; font-family: 'Outfit';">Supervision</span>
+                            </div>
+
+                            <span style="color: var(--brand-accent); font-size: 1.3rem; opacity: 0.4;">+</span>
+
+                            <!-- Skills Matrix -->
+                            <div
+                                style="padding: 12px 18px; border-radius: 6px; text-align: center; border-left: 3px solid var(--brand-accent); border-top: none; background: #fff;">
+                                <span
+                                    style="color: var(--brand-text-dark); font-size: 0.9rem; font-weight: 700; font-family: 'Outfit';">Skills
+                                    Matrix</span>
+                            </div>
+
+                            <span style="color: var(--brand-accent); font-size: 1.3rem; opacity: 0.4;">+</span>
+
+                            <!-- LPA -->
+                            <div
+                                style="padding: 12px 24px; border-radius: 6px; text-align: center; border-left: 3px solid var(--brand-accent); border-top: none; background: #fff;">
+                                <span
+                                    style="color: var(--brand-text-dark); font-size: 0.9rem; font-weight: 700; font-family: 'Outfit';">LPA's</span>
+                            </div>
+
+                            <span style="color: var(--brand-accent); font-size: 1.5rem; opacity: 0.5;">→</span>
+
+                            <!-- Result Badge -->
+                            <div
+                                style="background: linear-gradient(135deg, #722F37 0%, #9E4244 100%); padding: 14px 30px; border-radius: 6px; text-align: center; position: relative; overflow: hidden;">
+                                <span
+                                    style="color: #fff; font-weight: 900; font-size: 1.4rem; font-family: 'Outfit'; position: relative; z-index: 1; display: inline;">100%
+                                </span>
+                                <span
+                                    style="color: rgba(255,255,255,0.95); font-size: 0.85rem; font-family: 'Outfit'; position: relative; z-index: 1; font-weight: 600;">Material
+                                    Inspected</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>STAMP QUALITY</span>
+                <span>04 / 09</span>
+            </div>
+        </div>
+
+
+        <!-- SLIDE 5: METHODOLOGY -->
+        <div class="slide">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-tag">EXECUTION</span>
+                    <h2 class="slide-title">The 5-Pillar Methodology</h2>
+                </div>
+                <div class="grid-2">
+                    <div style="display:flex; flex-direction:column; gap:40px;">
+                        <div class="p-card" style="padding: 40px;">
+                            <h4
+                                style="margin:0; font-size:2rem; border-left:4px solid var(--brand-accent); padding-left:20px;">
+                                1. Seamless Communication</h4>
+                            <p style="font-size:1.4rem; color:var(--brand-text); margin:15px 0 0;">24/7 direct channel
+                                and continuous feedback loop with the plant.</p>
+                        </div>
+                        <div class="p-card" style="padding: 40px;">
+                            <h4
+                                style="margin:0; font-size:2rem; border-left:4px solid var(--brand-accent); padding-left:20px;">
+                                2. Continuous Evaluation</h4>
+                            <p style="font-size:1.4rem; color:var(--brand-text); margin:15px 0 0;">Real-time staff
+                                skills validation (Skills Matrix).</p>
+                        </div>
+                        <div class="p-card" style="padding: 40px;">
+                            <h4
+                                style="margin:0; font-size:2rem; border-left:4px solid var(--brand-accent); padding-left:20px;">
+                                3. 100% Supervision</h4>
+                            <p style="font-size:1.4rem; color:var(--brand-text); margin:15px 0 0;">Dedicated on-floor
+                                lead present during every active shift.</p>
+                        </div>
+                    </div>
+                    <div style="display:flex; flex-direction:column; gap:40px;">
+                        <div class="p-card" style="padding: 40px;">
+                            <h4
+                                style="margin:0; font-size:2rem; border-left:4px solid var(--brand-accent); padding-left:20px;">
+                                4. Risk Mitigation</h4>
+                            <p style="font-size:1.4rem; color:var(--brand-text); margin:15px 0 0;">Preventive analysis
+                                (FMEA) performed before every launch.</p>
+                        </div>
+                        <div class="p-card" style="padding: 40px;">
+                            <h4
+                                style="margin:0; font-size:2rem; border-left:4px solid var(--brand-accent); padding-left:20px;">
+                                5. Daily Reporting</h4>
+                            <p style="font-size:1.4rem; color:var(--brand-text); margin:15px 0 0;">Charts, Paretos,
+                                and photographic evidence delivered every 24h.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>STAMP QUALITY</span>
+                <span>05 / 09</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: RESULTS -->
+        <div class="slide">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-tag">PERFORMANCE</span>
+                    <h2 class="slide-title">proven Results</h2>
+                </div>
+                <div style="margin-bottom:50px;">
+                    <p class="intro-text" style="max-width: 1200px;">Actual metrics achieved through our standardized
+                        intervention.</p>
+                </div>
+                <div class="grid-2">
+                    <div class="metric-item">
+                        <span class="metric-val">+10%</span>
+                        <span class="metric-label">Productivity Increase</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-val">0</span>
+                        <span class="metric-label">External PPMs</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-val red">-85%</span>
+                        <span class="metric-label">Internal Scrap</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-val">24/7</span>
+                        <span class="metric-label">Availability</span>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>STAMP QUALITY</span>
+                <span>06 / 09</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: WHY US -->
+        <div class="slide">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-tag">WORLD-CLASS DISCIPLINE</span>
+                    <h2 class="slide-title">Why Choose Stamp Quality?</h2>
+                </div>
+                <div class="grid-2" style="align-items: center;">
+                    <!-- Left: Standard -->
+                    <div
+                        style="opacity: 0.8; padding: 40px; border:1px solid #ccc; height: 100%; display: flex; flex-direction: column; justify-content: center; background: #fff;">
+                        <h3
+                            style="color:#666; font-size:2rem; margin-bottom:40px; text-transform:uppercase; font-family: 'Outfit';">
+                            Average Provider<br><span style="font-size:1.2rem;">(Standard 3rd Party)</span></h3>
+                        <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:25px;">
+                            <li style="color:#666; font-size:1.4rem;">✖ Reactive <small>(Only on failure)</small></li>
+                            <li style="color:#666; font-size:1.4rem;">✖ Remote/Zero Supervision</li>
+                            <li style="color:#666; font-size:1.4rem;">✖ High Turnover/General Staff</li>
+                            <li style="color:#666; font-size:1.4rem;">✖ Basic Reporting <small>(Excel)</small></li>
+                        </ul>
+                    </div>
+
+                    <!-- Right: Stamp Quality -->
+                    <div class="p-card"
+                        style="height: 100%; display: flex; flex-direction: column; justify-content: center; border-color: var(--brand-accent);">
+                        <h3
+                            style="color:var(--brand-text-dark); font-size:2.2rem; margin-bottom:40px; text-transform:uppercase; font-family: 'Outfit';">
+                            Total Quality<br><span style="font-size:1.2rem; color:var(--brand-accent);">(Stamp
+                                Quality)</span></h3>
+                        <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:25px;">
+                            <li style="color:var(--brand-text-dark); font-size:1.5rem;">✔ Preventive <small>(Risk
+                                    Analysis)</small></li>
+                            <li style="color:var(--brand-text-dark); font-size:1.5rem;">✔ Dedicated On-Site Leader</li>
+                            <li style="color:var(--brand-text-dark); font-size:1.5rem;">✔ Certified Personnel</li>
+                            <li style="color:var(--brand-text-dark); font-size:1.5rem;">✔ Data-Driven Analytics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>STAMP QUALITY</span>
+                <span>07 / 09</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: CLIENTS -->
+        <div class="slide">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-tag">OUR PARTNERS</span>
+                    <h2 class="slide-title">Trusted by Industry Leaders</h2>
+                </div>
+                <div class="client-grid">
+                    <div class="client-box"><img src="assets/logos/nal.png" alt="NAL"></div>
+                    <div class="client-box"><img src="assets/logos/nidec.png" alt="Nidec"></div>
+                    <div class="client-box"><img src="assets/logos/taxan.png" alt="Taxan"></div>
+                    <div class="client-box"><img src="assets/logos/daikin.png" alt="Daikin"></div>
+                    <div class="client-box"><img src="assets/logos/continental.png" alt="Continental"></div>
+                    <div class="client-box"><img src="assets/logos/plastics_technology.png" alt="Plastics Tech"></div>
+                    <div class="client-box"><img src="assets/logos/plastic_omnium.png" alt="Plastic Omnium"></div>
+                    <div class="client-box"><img src="assets/logos/integrity_tool.png" alt="Integrity Tool"></div>
+                    <div class="client-box"><img src="assets/logos/asiaway.png" alt="Asiaway"></div>
+                    <div class="client-box"><img src="assets/logos/arcosa.png" alt="Arcosa"></div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>STAMP QUALITY</span>
+                <span>08 / 09</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: CONTACTO -->
+        <div class="slide">
+            <div class="slide-content" style="align-items: center; text-align: center; justify-content: center;">
+
+                <!-- Tagline -->
+                <div
+                    style="margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 15px;">
+                    <span style="width: 40px; height: 3px; background: var(--brand-accent);"></span>
+                    <span
+                        style="color: var(--brand-accent); font-size: 1.6rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; font-family: 'Outfit';">
+                        READY TO BULLETPROOF YOUR OPERATION?
+                    </span>
+                </div>
+
+                <!-- Main Headline -->
+                <h2
+                    style="font-size: 8rem; color: var(--brand-text-dark); line-height: 1; margin: 0 0 50px 0; font-family: 'Outfit'; font-weight: 900;">
+                    CONTACT US TODAY.
+                </h2>
+
+                <div class="contact-box" style="margin-top: 20px;">
+
+                    <p style="font-size: 3rem; color: var(--brand-text-dark); font-weight: 700; margin: 0 0 15px 0;">
+                        iber@stampquality.com</p>
+                    <p style="font-size: 2.5rem; color: var(--brand-text); margin: 0;">+52 55 9020 5454</p>
+
+                    <div
+                        style="margin-top: 50px; border-top: 1px solid var(--brand-border); padding-top: 35px; display: flex; gap: 25px; justify-content: center; flex-wrap: wrap;">
+                        <span
+                            style="color: var(--brand-text-dark); font-size: 1.35rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-family: 'Outfit';">San
+                            Luis Potosí</span>
+                        <span style="color: var(--brand-accent); font-size: 1.35rem;">•</span>
+                        <span
+                            style="color: var(--brand-text-dark); font-size: 1.35rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-family: 'Outfit';">Querétaro</span>
+                        <span style="color: var(--brand-accent); font-size: 1.35rem;">•</span>
+                        <span
+                            style="color: var(--brand-text-dark); font-size: 1.35rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-family: 'Outfit';">Guanajuato</span>
+                        <span style="color: var(--brand-accent); font-size: 1.35rem;">•</span>
+                        <span
+                            style="color: var(--brand-text-dark); font-size: 1.35rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-family: 'Outfit';">Nuevo
+                            León</span>
+                        <span style="color: var(--brand-accent); font-size: 1.35rem;">•</span>
+                        <span
+                            style="color: var(--brand-text-dark); font-size: 1.35rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-family: 'Outfit';">Aguascalientes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>STAMP QUALITY</span>
+                <span>09 / 09</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

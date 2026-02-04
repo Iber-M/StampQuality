@@ -49,6 +49,15 @@
     --text-header: #FFFFFF;
     --hero-bg: radial-gradient(circle at 70% 30%, rgba(114, 47, 55, 0.2) 0%, transparent 60%),
         linear-gradient(135deg, #0B0C10 0%, #1F2833 100%);
+
+    /* Shield & Cards */
+    --shield-bg: linear-gradient(135deg, rgba(31, 40, 51, 0.8), rgba(11, 12, 16, 0.9));
+    --shield-pct-grad: linear-gradient(to bottom, #FFF, #9E4244);
+    --card-border: rgba(255, 255, 255, 0.05);
+    --card-hover-bg: #1A1C21;
+    --split-bg: #08090C;
+    --section-alt-bg: #0B0C10;
+    /* Dark alt background */
 }
 
 [data-theme="light"] {
@@ -70,6 +79,18 @@
 
     --hero-bg: radial-gradient(circle at 70% 30%, rgba(114, 47, 55, 0.1) 0%, transparent 60%),
         linear-gradient(135deg, #EFF1F3 0%, #DFE2E6 100%);
+
+    /* Light Mode Components */
+    --shield-bg: linear-gradient(135deg, #FFFFFF, #E6E8EB);
+    --shield-pct-grad: linear-gradient(to bottom, #333, #9E4244);
+    --card-border: rgba(0, 0, 0, 0.08);
+    /* Visible border on light */
+    --card-hover-bg: #F8F9FA;
+    /* Slightly lighter than bg */
+    --split-bg: #E2E4E8;
+    /* Darker grey to differentiate */
+    --section-alt-bg: #EAECEF;
+    /* Slightly different from bg */
 }
 
 /* Base Reset & Typography */
@@ -376,7 +397,7 @@ nav {
 .shield-main {
     width: 320px;
     height: 320px;
-    background: linear-gradient(135deg, rgba(31, 40, 51, 0.8), rgba(11, 12, 16, 0.9));
+    background: var(--shield-bg);
     border: 1px solid rgba(114, 47, 55, 0.5);
     border-radius: 50%;
     display: flex;
@@ -390,7 +411,7 @@ nav {
     font-size: 5rem;
     font-family: 'Outfit', sans-serif;
     font-weight: 900;
-    background: linear-gradient(to bottom, #FFF, #9E4244);
+    background: var(--shield-pct-grad);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -470,7 +491,7 @@ nav {
     background: var(--surface);
     padding: 50px 40px;
     border-radius: var(--radius-md);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
     /* Slight border for definition */
     transition: all 0.4s ease;
     position: relative;
@@ -479,7 +500,7 @@ nav {
 
 .card:hover {
     transform: translateY(-10px);
-    background: #1A1C21;
+    background: var(--card-hover-bg);
     border-color: var(--accent);
 }
 
@@ -513,7 +534,7 @@ nav {
 .card h3 {
     font-size: 1.5rem;
     margin-bottom: 20px;
-    color: white;
+    color: var(--text-header);
 }
 
 .card ul {
@@ -540,8 +561,8 @@ nav {
 
 /* Authority Section */
 .split-section {
-    background: #08090C;
-    color: white;
+    background: var(--split-bg);
+    color: var(--text-main);
     display: grid;
     grid-template-columns: 1fr 1fr;
     border-bottom: 1px solid #1A1C21;
@@ -589,7 +610,7 @@ nav {
 }
 
 .pillar h4 {
-    color: white;
+    color: var(--text-header);
     margin-bottom: 5px;
     font-size: 1.2rem;
 }
