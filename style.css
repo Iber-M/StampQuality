@@ -1125,6 +1125,10 @@ footer {
     .hero h1 {
         font-size: 2.5rem;
         line-height: 1.6;
+        letter-spacing: 1px;
+        /* Separación entre letras */
+        word-spacing: 5px;
+        /* Separación extra entre palabras */
     }
 
     .results-grid {
@@ -1136,5 +1140,7 @@ footer {
     .hero h1 {
         font-size: 2.2rem;
         line-height: 1.7;
+        word-spacing: 8px;
+        /* Aún más separación en pantallas pequeñas */
     }
 }
